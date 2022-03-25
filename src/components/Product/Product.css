@@ -23,3 +23,18 @@
   text-decoration: none;
   color: black;
 }
+
+.product-text-color {
+  color: #795548;
+}
+
+.btn-product-add-cart {
+  border: #795548 1px solid;
+  color: #795548;
+}
+
+.btn-product-add-cart:hover {
+  background-color: #795548;
+  color: white;
+  opacity: 0.6;
+}

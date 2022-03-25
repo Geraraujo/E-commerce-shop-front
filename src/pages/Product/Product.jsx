@@ -48,7 +48,7 @@ function Product() {
   return (
     <>
       {product && (
-        <section className="py-5">
+        <section className="py-3">
           <div className="container px-4 px-lg-5 my-5">
             <div className="row gx-4 gx-lg-5 align-items-center">
               <div className="col-md-6">
@@ -68,14 +68,14 @@ function Product() {
                 <div className="d-flex justify-content-center mt-5">
                   <input
                     className="form-control me-3"
-                    id="inputQuantity"
+                    id="product-input-quantity"
                     type="number"
                     value={quantity}
                     onChange={(ev) => handleOnchange(ev.target.value)}
                     style={{ maxWidth: "3rem" }}
                   />
                   <button
-                    className="btn btn-outline-dark flex-shrink-0"
+                    className="btn btn-product-page flex-shrink-0"
                     onClick={() => handleClick()}
                   >
                     <i className="bi-cart-fill me-1"></i>
@@ -87,10 +87,10 @@ function Product() {
           </div>
         </section>
       )}
-
-      <section className="py-5 bg-light">
+      <hr />
+      <section className="py-2">
         <div className="container px-4 px-lg-5">
-          <p className="display-6 fw-bold mb-5">Related products</p>
+          <p className="display-6 fw-bold mb-5 py-3">Related products</p>
           <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             {relatedProducts &&
               relatedProducts.map((product) => (

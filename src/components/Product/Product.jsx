@@ -22,18 +22,18 @@ function Product({ product }) {
           alt={product.images[0].title}
         />
       </Link>
-      <div className="card-body p-4">
+      <div className="card-body p-4 product-text-color">
         <div className="text-center">
           <h5 className="fw-bolder">{product.name}</h5>
-          {`$${product.price}`}
+          {`$ ${product.price}`}
         </div>
       </div>
       <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
         {/* TODO: for next sprint (01/04) */}
         {
-          <div className="text-center">
+          <div className="text-center product-text-color">
             <button
-              className="btn btn-outline-dark mt-auto"
+              className="btn btn-product-add-cart"
               onClick={() => handleClick()}
             >
               Add to cart
