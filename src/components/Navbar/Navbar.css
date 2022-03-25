@@ -1,0 +1,39 @@
+#navbar {
+  background-color: #ded589;
+}
+
+#navbar-brand {
+  color: #795548;
+  letter-spacing: 1.8px;
+  font-size: 1.6rem;
+}
+
+.btn-navbar-cart {
+  border: #795548 1px solid;
+}
+
+.navbar-badge {
+  color: #795548;
+  font-size: 1rem;
+}
+
+.cart-icon {
+  color: #795548;
+}
+
+.btn .badge {
+  top: 1px;
+}
+
+#navbar-cart:hover {
+  background-color: #795548;
+  opacity: 0.6;
+}
+
+#navbar-cart:hover > .cart-icon {
+  color: aliceblue;
+}
+
+#navbar-cart:hover > .navbar-badge {
+  color: aliceblue;
+}

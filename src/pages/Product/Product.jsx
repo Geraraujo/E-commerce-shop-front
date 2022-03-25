@@ -69,7 +69,7 @@ function Product() {
                   <input
                     className="form-control me-3"
                     id="inputQuantity"
-                    type="num"
+                    type="number"
                     value={quantity}
                     onChange={(ev) => handleOnchange(ev.target.value)}
                     style={{ maxWidth: "3rem" }}

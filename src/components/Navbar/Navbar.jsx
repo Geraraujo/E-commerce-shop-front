@@ -1,12 +1,14 @@
 import React from "react";
+import "./Navbar.css";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 function Navbar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav id="navbar" className="navbar navbar-expand-lg navbar-light">
         <div className="container px-4 px-lg-5">
-          <a className="navbar-brand" href="#!">
-            HACKSHOP
+          <a id="navbar-brand" className="navbar-brand fw-bold" href="#!">
+            CRAFTBEER
           </a>
           <button
             className="navbar-toggler"
@@ -64,15 +66,14 @@ function Navbar() {
                 </ul>
               </li>
             </ul>
-            <form className="d-flex">
-              <button className="btn btn-outline-dark" type="submit">
-                <i className="bi-cart-fill me-1"></i>
-                Cart
-                <span className="badge bg-dark text-white ms-1 rounded-pill">
-                  0
-                </span>
-              </button>
-            </form>
+            <button
+              id="navbar-cart"
+              className="btn btn-navbar-cart"
+              type="submit"
+            >
+              <ShoppingCartIcon className="cart-icon"></ShoppingCartIcon>
+              <span className="badge ms-1 navbar-badge">0</span>
+            </button>
           </div>
         </div>
       </nav>
