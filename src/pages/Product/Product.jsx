@@ -66,7 +66,7 @@ function Product() {
               <div className="col-md-6">
                 <p className="display-5 fw-bold">{product.name}</p>
                 <div className="fs-5 mt-4 mb-4">
-                  <span>${product.price}</span>
+                  <span>U$S{product.price}</span>
                 </div>
                 <p className="lead text-center">{product.description}</p>
                 <div className="d-flex justify-content-center mt-5">

@@ -10,11 +10,7 @@ function Product({ product }) {
   };
   return (
     <div className="card custom-product-card h-100 shadow">
-      <Link
-        key={product.id}
-        to={`/product/${product.id}`}
-        className="product-link"
-      >
+      <Link key={product.id} to={`/product/${product.id}`} className="product-link">
         <img
           id="related-product-image"
           className="card-img-top"
@@ -25,17 +21,14 @@ function Product({ product }) {
       <div className="card-body p-4 product-text-color">
         <div className="text-center">
           <h5 className="fw-bolder">{product.name}</h5>
-          {`$ ${product.price}`}
+          {`U$$ ${product.price}`}
         </div>
       </div>
       <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
         {/* TODO: for next sprint (01/04) */}
         {
           <div className="text-center product-text-color">
-            <button
-              className="btn btn-product-add-cart"
-              onClick={() => handleClick()}
-            >
+            <button className="btn btn-product-add-cart" onClick={() => handleClick()}>
               Add to cart
             </button>
           </div>
