@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ProductItem from "../../components/Product/Product";
 import "./Product.css";
 
@@ -9,6 +9,7 @@ function Product() {
   const [relatedProducts, setRelatedProducts] = useState();
   const [quantity, setQuantity] = useState(1);
   const params = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -40,7 +41,9 @@ function Product() {
     setQuantity(quantity);
   };
 
-  const handleClick = () => {};
+  const handleClick = () => {
+    navigate("/cart");
+  };
 
   return (
     <>

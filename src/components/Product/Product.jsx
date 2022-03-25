@@ -1,9 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Product.css";
 
 function Product({ product }) {
-  const handleClick = () => {};
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/cart");
+  };
   return (
     <div className="card custom-product-card h-100 shadow">
       <Link
