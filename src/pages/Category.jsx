@@ -25,8 +25,8 @@ function Category() {
         <div className="bg-opacity py-5 d-flex align-items-center">
           <div className="container px-4 px-lg-5 my-5 ">
             <div className="text-start text-white">
-              <h1 className="display-4 fw-bolder">{category.name}</h1>
-              <p className="fs-5">{category.description}</p>
+              <h1 className="display-2 fw-bolder">{category.name}</h1>
+              <p className="display-5 fs-3">{category.description}</p>
             </div>
           </div>
         </div>
