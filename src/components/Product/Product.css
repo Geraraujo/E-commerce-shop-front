@@ -13,3 +13,13 @@
 .card:hover {
   transform: scale(1.2);
 }
+
+.product-link {
+  text-decoration: none;
+  color: black;
+}
+
+.product-link:hover {
+  text-decoration: none;
+  color: black;
+}

@@ -34,11 +34,13 @@ function Product() {
     //ENDTODO
     getProduct();
     getRelatedProducts();
-  }, []);
+  }, [params.id]);
 
   const handleOnchange = (quantity) => {
     setQuantity(quantity);
   };
+
+  const handleClick = () => {};
 
   return (
     <>
@@ -55,7 +57,7 @@ function Product() {
                 />
               </div>
               <div className="col-md-6">
-                <h1 className="display-5 fw-bolder">{product.name}</h1>
+                <p className="display-5 fw-bold">{product.name}</p>
                 <div className="fs-5 mt-4 mb-4">
                   <span>${product.price}</span>
                 </div>
@@ -71,7 +73,7 @@ function Product() {
                   />
                   <button
                     className="btn btn-outline-dark flex-shrink-0"
-                    type="button"
+                    onClick={() => handleClick()}
                   >
                     <i className="bi-cart-fill me-1"></i>
                     Add to cart
@@ -85,15 +87,13 @@ function Product() {
 
       <section className="py-5 bg-light">
         <div className="container px-4 px-lg-5">
-          <h2 className="fw-bolder mb-5">Related products</h2>
+          <p className="display-6 fw-bold mb-5">Related products</p>
           <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             {relatedProducts &&
               relatedProducts.map((product) => (
-                <>
-                  <div class="col-3 mb-5">
-                    <ProductItem key={product.id} product={product} />{" "}
-                  </div>
-                </>
+                <div key={product.id} className="col-md-3 mb-5">
+                  <ProductItem product={product} />{" "}
+                </div>
               ))}
           </div>
         </div>
