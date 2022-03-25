@@ -50,7 +50,7 @@ function Product() {
   };
 
   return (
-    <main className="flex-shrink-0">
+    <main className="flex-shrink-0 text-start">
       {product && (
         <section className="py-3">
           <div className="container px-4 px-lg-5 my-5">
@@ -68,7 +68,7 @@ function Product() {
                 <div className="fs-5 mt-4 mb-4">
                   <span>U$S{product.price}</span>
                 </div>
-                <p className="lead text-center">{product.description}</p>
+                <p className="lead text-start">{product.description}</p>
                 <div className="d-flex justify-content-center mt-5">
                   <input
                     className="form-control me-3"
@@ -96,11 +96,11 @@ function Product() {
           <hr />
           <section className="py-2">
             <div className="container px-4 px-lg-5">
-              <p className="display-6 fw-bold mb-5 py-3">Related products</p>
+              <p className="display-6 fw-bold mb-5 py-3 text-center">Related products</p>
               <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 {relatedProducts &&
                   relatedProducts.map((product) => (
-                    <div key={product.id} className="col-md-3 mb-5">
+                    <div key={product.id} className="col-md-6 mb-6">
                       <ProductItem product={product} />{" "}
                     </div>
                   ))}

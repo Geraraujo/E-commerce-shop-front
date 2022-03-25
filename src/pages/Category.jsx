@@ -24,7 +24,7 @@ function Category() {
       <header className="bg-image">
         <div className="bg-opacity py-5 d-flex align-items-center">
           <div className="container px-4 px-lg-5 my-5 ">
-            <div className="text-center text-white">
+            <div className="text-start text-white">
               <h1 className="display-4 fw-bolder">{category.name}</h1>
               <p className="fs-5">{category.description}</p>
             </div>
