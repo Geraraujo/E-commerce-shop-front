@@ -4,11 +4,9 @@ import "./Footer.css";
 function Footer() {
   return (
     <>
-      <footer className="py-5">
+      <footer class="footer mt-auto py-3">
         <div className="container">
-          <p className="m-0 text-center">
-            Hack Academy - Coding Bootcamp April 2022
-          </p>
+          <p className="m-0 text-center">Hack Academy - Coding Bootcamp April 2022</p>
         </div>
       </footer>
     </>

@@ -1,6 +1,7 @@
 .slide {
   object-fit: cover;
-  height: 27rem;
+  height: 75vh;
   margin: auto;
   background-color: white;
+  width: 100%;
 }

@@ -22,10 +22,11 @@ function Category() {
   return (
     <>
       <header className="bg-image">
-        <div className="bg-opacity py-5">
-          <div className="container px-4 px-lg-5 my-5">
+        <div className="bg-opacity py-5 d-flex align-items-center">
+          <div className="container px-4 px-lg-5 my-5 ">
             <div className="text-center text-white">
               <h1 className="display-4 fw-bolder">{category.name}</h1>
+              <p className="display-6">Description ...</p>
             </div>
           </div>
         </div>

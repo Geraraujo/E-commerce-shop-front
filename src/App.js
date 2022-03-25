@@ -13,7 +13,7 @@ import Product from "./pages/Product/Product";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App d-flex flex-column h-100">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

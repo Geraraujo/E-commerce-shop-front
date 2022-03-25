@@ -20,11 +20,12 @@ function Home() {
   return (
     <>
       <Carousel>
-        <Carousel.Item>
+        <Carousel.Item className="w-100">
           <div className="d-block w-100">
             <img
               className="slide w-100 img-fluid slide"
-              src="https://phantom-marca.unidadeditorial.es/074484889bfce26cb2fa8c71d10cfc3f/resize/1320/f/jpg/assets/multimedia/imagenes/2022/01/19/16426137519550.png"
+              // src="https://phantom-marca.unidadeditorial.es/074484889bfce26cb2fa8c71d10cfc3f/resize/1320/f/jpg/assets/multimedia/imagenes/2022/01/19/16426137519550.png"
+              src="https://images.unsplash.com/photo-1615332579037-3c44b3660b53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
               alt=""
             />
           </div>
@@ -39,19 +40,14 @@ function Home() {
         <Carousel.Item>
           <img
             className="d-block w-100 slide"
-            src="https://images.pexels.com/photos/1400255/pexels-photo-1400255.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="https://cdn.pixabay.com/photo/2015/09/05/23/33/beer-926287_960_720.jpg"
             alt="Third slide"
           />
-
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-
       <section className="py-5">
-        <div className="container px-4 px-lg-5 mt-5">
+        <div className="container px-4 px-lg-5 mt-3">
+          <p className="display-6 fw-bold py-3 mb-5">Featured products</p>
           <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             {/* <div className="card h-100"> */}
             {products &&

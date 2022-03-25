@@ -22,20 +22,24 @@ function Product() {
       } catch (err) {}
     };
 
-    //TODO: change for new url which search products by category
-    const getRelatedProducts = async () => {
-      try {
-        const response = await axios({
-          method: "GET",
-          url: `${process.env.REACT_APP_API_URL}/featured-products`,
-        });
-        setRelatedProducts(response.data);
-      } catch (err) {}
-    };
-    //ENDTODO
     getProduct();
-    getRelatedProducts();
   }, [params.id]);
+
+  useEffect(() => {
+    try {
+      const getRelatedProducts = async () => {
+        try {
+          const response = await axios({
+            method: "GET",
+            url: `${process.env.REACT_APP_API_URL}/products/${product.categoryId}/category`,
+          });
+          setRelatedProducts(response.data.filter((product) => product.id !== Number(params.id)));
+        } catch (err) {}
+      };
+
+      if (product) getRelatedProducts();
+    } catch (err) {}
+  }, [product]);
 
   const handleOnchange = (quantity) => {
     setQuantity(quantity);
@@ -46,7 +50,7 @@ function Product() {
   };
 
   return (
-    <>
+    <main className="flex-shrink-0">
       {product && (
         <section className="py-3">
           <div className="container px-4 px-lg-5 my-5">
@@ -87,21 +91,25 @@ function Product() {
           </div>
         </section>
       )}
-      <hr />
-      <section className="py-2">
-        <div className="container px-4 px-lg-5">
-          <p className="display-6 fw-bold mb-5 py-3">Related products</p>
-          <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            {relatedProducts &&
-              relatedProducts.map((product) => (
-                <div key={product.id} className="col-md-3 mb-5">
-                  <ProductItem product={product} />{" "}
-                </div>
-              ))}
-          </div>
-        </div>
-      </section>
-    </>
+      {relatedProducts && relatedProducts.length > 0 && (
+        <>
+          <hr />
+          <section className="py-2">
+            <div className="container px-4 px-lg-5">
+              <p className="display-6 fw-bold mb-5 py-3">Related products</p>
+              <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                {relatedProducts &&
+                  relatedProducts.map((product) => (
+                    <div key={product.id} className="col-md-3 mb-5">
+                      <ProductItem product={product} />{" "}
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </section>
+        </>
+      )}
+    </main>
   );
 }
 
