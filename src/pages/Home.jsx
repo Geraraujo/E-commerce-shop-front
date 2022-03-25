@@ -45,14 +45,14 @@ function Home() {
         </Carousel.Item>
       </Carousel>
       <section className="py-5">
-        <div className="container px-4 px-lg-5 mt-3">
+        <div className="px-4 px-lg-5 mt-3">
           <p className="display-6 fw-bold py-3 mb-5">Featured products</p>
-          <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-1 row-cols-xl-5 justify-content-center">
             {/* <div className="card h-100"> */}
             {products &&
               products.map((product) => (
                 <div key={product.id} className="col mb-5">
-                  <ProductItem product={product} />;
+                  <ProductItem product={product} />
                 </div>
               ))}
             {/* </div> */}
