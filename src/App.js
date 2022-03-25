@@ -5,7 +5,7 @@ import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import Product from "./pages/Product/Product";
 
