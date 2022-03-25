@@ -49,7 +49,7 @@ function Product() {
               <div className="col-md-6">
                 <img
                   id="product-image"
-                  className="card-img-top mb-5 mb-md-0"
+                  className="card-img-top mb-5 mb-md-0 shadow"
                   src={`${process.env.REACT_APP_API_URL}/${product.images[0].name}`}
                   alt={product.images[0].title}
                 />

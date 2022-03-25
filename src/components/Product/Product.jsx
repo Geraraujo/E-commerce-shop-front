@@ -6,7 +6,7 @@ function Product({ product }) {
   return (
     // <Link to={`/product/${product.id}`}>
     // <Link to={`/product/`}>
-    <div className="card h-100">
+    <div className="card h-100 shadow">
       <img
         id="related-product-image"
         className="card-img-top"
