@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Product from "../components/Product/Product";
+import "./Category.css";
 
 function Category() {
   const [category, setCategory] = useState({});
@@ -20,10 +21,12 @@ function Category() {
 
   return (
     <>
-      <header className="bg-dark py-5">
-        <div className="container px-4 px-lg-5 my-5">
-          <div className="text-center text-white">
-            <h1 className="display-4 fw-bolder">{category.name}</h1>
+      <header className="bg-image">
+        <div className="bg-opacity py-5">
+          <div className="container px-4 px-lg-5 my-5">
+            <div className="text-center text-white">
+              <h1 className="display-4 fw-bolder">{category.name}</h1>
+            </div>
           </div>
         </div>
       </header>
