@@ -42,7 +42,7 @@ function NavbarMenu() {
                   className="nav-link text-start p-0 d-flex justify-content-around"
                   to="category/-dark"
                 >
-                  <span className="navbar-dd-span">Span</span>
+                  <span className="navbar-dd-span">Dark</span>
                   <span>
                     <SportsBarIcon fontSize="small" />
                   </span>
