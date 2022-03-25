@@ -11,7 +11,7 @@ function Product({ product }) {
         id="related-product-image"
         className="card-img-top"
         src={`${process.env.REACT_APP_API_URL}/${product.images[0].name}`}
-        alt="..."
+        alt={product.images[0].title}
       />
       <div className="card-body p-4">
         <div className="text-center">
@@ -21,13 +21,13 @@ function Product({ product }) {
       </div>
       <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
         {/* TODO: for next sprint (01/04) */}
-        {/* <div className="text-center">
-            <button
-              className="btn btn-outline-dark mt-auto"
-            >
+        {
+          <div className="text-center">
+            <button className="btn btn-outline-dark mt-auto">
               Add to cart
             </button>
-          </div> */}
+          </div>
+        }
       </div>
     </div>
     // </Link>
