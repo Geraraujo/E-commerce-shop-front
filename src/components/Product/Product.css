@@ -5,12 +5,12 @@
   border-top-right-radius: 15px;
 }
 
-.card {
+.custom-product-card {
   border-radius: 15px;
   transition: all 0.5s 0.2s;
 }
 
-.card:hover {
+.custom-product-card:hover {
   transform: scale(1.2);
 }
 

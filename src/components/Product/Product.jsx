@@ -5,7 +5,7 @@ import "./Product.css";
 function Product({ product }) {
   const handleClick = () => {};
   return (
-    <div className="card h-100 shadow">
+    <div className="card custom-product-card h-100 shadow">
       <Link
         key={product.id}
         to={`/product/${product.id}`}
