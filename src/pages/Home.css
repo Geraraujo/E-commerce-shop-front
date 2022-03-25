@@ -1,0 +1,6 @@
+.slide {
+  object-fit: cover;
+  height: 27rem;
+  margin: auto;
+  background-color: white;
+}

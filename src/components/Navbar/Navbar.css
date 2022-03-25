@@ -37,3 +37,7 @@
 #navbar-cart:hover > .navbar-badge {
   color: aliceblue;
 }
+
+.dropdown-menu {
+  background-color: #ded589;
+}

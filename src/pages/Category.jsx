@@ -8,7 +8,7 @@ function Category() {
   const { slug } = useParams();
   useEffect(() => {
     getProductsByCategory();
-  }, []);
+  }, [slug]);
   const getProductsByCategory = async () => {
     const response = await axios({
       method: "GET",

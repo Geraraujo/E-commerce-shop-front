@@ -4,6 +4,8 @@ import Category from "./pages/Category";
 import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import About from "./pages/About";
+import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
@@ -20,6 +22,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
