@@ -24,7 +24,6 @@ function Home() {
           <div className="d-block w-100">
             <img
               className="slide w-100 img-fluid slide"
-              // src="https://phantom-marca.unidadeditorial.es/074484889bfce26cb2fa8c71d10cfc3f/resize/1320/f/jpg/assets/multimedia/imagenes/2022/01/19/16426137519550.png"
               src="https://images.unsplash.com/photo-1615332579037-3c44b3660b53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
               alt=""
             />
