@@ -55,7 +55,7 @@ function Product() {
         <section className="py-3">
           <div className="container px-4 px-lg-5 my-5">
             <div className="row gx-4 gx-lg-5 align-items-center">
-              <div className="col-md-6">
+              <div className="col-xl-6">
                 <img
                   id="product-image"
                   className="card-img-top mb-5 mb-md-0 shadow"
@@ -63,7 +63,7 @@ function Product() {
                   alt={product.images[0].title}
                 />
               </div>
-              <div className="col-md-6">
+              <div className="col-xl-6">
                 <p className="display-5 fw-bold">{product.name}</p>
                 <div className="fs-5 mt-4 mb-4">
                   <span>U$S{product.price}</span>
@@ -97,7 +97,7 @@ function Product() {
           <section className="py-2">
             <div className="px-4 px-lg-5">
               <p className="display-6 fw-bold mb-5 py-3 text-center">Related products</p>
-              <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-1 row-cols-xl-5 justify-content-center">
+              <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-5 justify-content-center">
                 {relatedProducts &&
                   relatedProducts.map((product) => (
                     <div key={product.id} className="col-md-6 mb-6">
