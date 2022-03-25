@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
-import Product from "./pages/Product";
+import Product from "./pages/Product/Product";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/category" element={<Category />} />
-        <Route path="/Product" element={<Product />} />
+        <Route path="/product/:id" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/login" element={<Login />} />
