@@ -1,0 +1,13 @@
+.bg-image {
+  background: url("https://labuenacheve.com/wp-content/uploads/2017/08/craft-beer.jpg") no-repeat
+    center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+
+.bg-opacity {
+  background-color: rgba(0, 0, 0, 0.562);
+}
