@@ -9,7 +9,8 @@ function Product({ product }) {
     navigate("/cart");
   };
   return (
-    <div className="card custom-product-card h-100 shadow">
+    <>
+      {/* <div className="card custom-product-card h-100 shadow"> */}
       <Link key={product.id} to={`/product/${product.id}`} className="product-link">
         <img
           id="related-product-image"
@@ -34,7 +35,8 @@ function Product({ product }) {
           </div>
         }
       </div>
-    </div>
+      {/* </div> */}
+    </>
   );
 }
 

@@ -24,16 +24,28 @@ function NavbarMenu() {
               </Link>
 
               <NavDropdown className="dropMenu" title="Categories" id="basic-nav-dropdown">
-                <Link className="nav-link text-center p-0" to="/category/-lager">
-                  Lager <SportsBarIcon fontSize="small" />
+                <Link
+                  className="nav-link text-start p-0 d-flex justify-content-around"
+                  to="/category/-lager"
+                >
+                  <span className="navbar-dd-span">Lager</span> <SportsBarIcon fontSize="small" />
                 </Link>
                 <NavDropdown.Divider />
-                <Link className="nav-link text-center p-0" to="category/-red">
-                  Red <SportsBarIcon fontSize="small" />
+                <Link
+                  className="nav-link text-start p-0 d-flex justify-content-around"
+                  to="category/-red"
+                >
+                  <span className="navbar-dd-span">Red</span> <SportsBarIcon fontSize="small" />
                 </Link>
                 <NavDropdown.Divider />
-                <Link className="nav-link text-center p-0" to="category/-dark">
-                  Dark <SportsBarIcon fontSize="small" />
+                <Link
+                  className="nav-link text-start p-0 d-flex justify-content-around"
+                  to="category/-dark"
+                >
+                  <span className="navbar-dd-span">Span</span>
+                  <span>
+                    <SportsBarIcon fontSize="small" />
+                  </span>
                 </Link>
               </NavDropdown>
             </Nav>

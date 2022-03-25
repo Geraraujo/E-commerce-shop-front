@@ -41,3 +41,7 @@
 .dropdown-menu {
   /* background-color: #ded589; */
 }
+
+.navbar-dd-span {
+  min-width: 50px;
+}
