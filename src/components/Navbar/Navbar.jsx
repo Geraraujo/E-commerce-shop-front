@@ -11,7 +11,7 @@ function NavbarMenu() {
       <Navbar id="navbar" className="navbar navbar-expand-lg navbar-light" expand="lg">
         <Container>
           <Navbar.Brand className="navbar-brand fw-bold" id="navbar-brand" href="/">
-            CRAFTERS
+            CRAFTERS+
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -33,16 +33,26 @@ function NavbarMenu() {
                 <NavDropdown.Divider />
                 <Link
                   className="nav-link text-start p-0 d-flex justify-content-around"
-                  to="category/-red"
+                  to="category/red"
                 >
                   <span className="navbar-dd-span">Red</span> <SportsBarIcon fontSize="small" />
                 </Link>
                 <NavDropdown.Divider />
                 <Link
                   className="nav-link text-start p-0 d-flex justify-content-around"
-                  to="category/-dark"
+                  to="category/dark"
                 >
                   <span className="navbar-dd-span">Dark</span>
+                  <span>
+                    <SportsBarIcon fontSize="small" />
+                  </span>
+                </Link>
+                <NavDropdown.Divider />
+                <Link
+                  className="nav-link text-start p-0 d-flex justify-content-around"
+                  to="category/industrial"
+                >
+                  <span className="navbar-dd-span">Industrial</span>
                   <span>
                     <SportsBarIcon fontSize="small" />
                   </span>
