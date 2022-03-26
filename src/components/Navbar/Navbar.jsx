@@ -10,12 +10,12 @@ function NavbarMenu() {
     <>
       <Navbar id="navbar" className="navbar navbar-expand-lg navbar-light" expand="lg">
         <Container>
-          <Navbar.Brand className="navbar-brand fw-bold" id="navbar-brand" href="#">
-            CRAFTBEER
+          <Navbar.Brand className="navbar-brand fw-bold" id="navbar-brand" href="/">
+            CRAFTERS
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+            <Nav className="me-auto text-start">
               <Link className="nav-link" to="/">
                 Home
               </Link>

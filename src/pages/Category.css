@@ -1,5 +1,6 @@
 .bg-image {
-  background: url("../../public/assets/craft-beer-category.jpg") no-repeat center center;
+  /* background: url("../../public/assets/craft-beer-category.jpg") no-repeat center center; */
+  background: url("../../public/assets/beer-category.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

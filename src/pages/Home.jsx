@@ -47,7 +47,7 @@ function Home() {
       <section className="py-5">
         <div className="px-4 px-lg-5 mt-3">
           <p className="display-6 fw-bold py-3 mb-5">Featured products</p>
-          <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-5 justify-content-center">
+          <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
             {/* <div className="card h-100"> */}
             {products &&
               products.map((product) => (

@@ -34,7 +34,7 @@ function Category() {
 
       <section className="py-5">
         <div className="px-4 px-lg-5 mt-5">
-          <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-5 justify-content-center">
+          <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
             {category.products &&
               category.products.map(function (product) {
                 return (

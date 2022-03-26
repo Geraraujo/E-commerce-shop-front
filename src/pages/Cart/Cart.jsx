@@ -1,39 +1,37 @@
+import "./Cart.css";
+import { Link } from "react-router-dom";
+
 function Cart() {
   return (
-    <section className="h-100 h-custom">
+    <section className="h-custom text-start py-5">
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12">
-            <div
-              className="card card-registration card-registration-2"
-              style={{ borderRadius: "15px" }}
-            >
+            <div className="card card-registration card-registration-2">
               <div className="card-body p-0">
                 <div className="row g-0">
-                  <div className="col-lg-8">
+                  <div className="col-lg-6">
                     <div className="p-5">
                       <div className="d-flex justify-content-between align-items-center mb-5">
-                        <h4 className="fw-bold mb-0 text-black">
-                          Shopping cart
-                        </h4>
-                        <h6 className="mb-0 text-muted">3 items</h6>
+                        <h4 className="fw-bold mb-0">Shopping cart</h4>
+                        <h6 className="mb-0 ">3 items</h6>
                       </div>
                       <hr className="my-4" />
 
                       <div className="row mb-4 d-flex justify-content-between align-items-center">
                         <div className="col-md-2 col-lg-2 col-xl-2">
                           <img
-                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp"
-                            className="img-fluid rounded-3"
+                            src={`${process.env.REACT_APP_API_URL}/red-1.jpg`}
+                            className="img-fluid rounded-1 cart-image"
                             alt="Cotton T-shirt"
                           />
                         </div>
                         <div className="col-md-3 col-lg-3 col-xl-3">
-                          <h6 className="text-muted">Shirt</h6>
-                          <h6 className="text-black mb-0">Cotton T-shirt</h6>
+                          <h6 className="">Shirt</h6>
+                          <h6 className=" mb-0">Cotton T-shirt</h6>
                         </div>
                         <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
-                          <button className="btn btn-link px-2">
+                          <button className="btn custom-btn-quantity px-2">
                             <i className="fas fa-minus"></i>
                           </button>
 
@@ -43,18 +41,18 @@ function Cart() {
                             name="quantity"
                             value="1"
                             type="number"
-                            className="form-control form-control-sm"
+                            className="form-control form-control-sm cart-quantity"
                           />
 
-                          <button className="btn btn-link px-2">
+                          <button className="btn custom-btn-quantity px-2">
                             <i className="fas fa-plus"></i>
                           </button>
                         </div>
                         <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                          <h6 className="mb-0">€ 44.00</h6>
+                          <h6 className="mb-0">U$S 44.00</h6>
                         </div>
                         <div className="col-md-1 col-lg-1 col-xl-1 text-end">
-                          <a href="#!" className="text-muted">
+                          <a href="#!" className="">
                             <i className="fas fa-times"></i>
                           </a>
                         </div>
@@ -65,17 +63,17 @@ function Cart() {
                       <div className="row mb-4 d-flex justify-content-between align-items-center">
                         <div className="col-md-2 col-lg-2 col-xl-2">
                           <img
-                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img6.webp"
-                            className="img-fluid rounded-3"
+                            src={`${process.env.REACT_APP_API_URL}/dark-1.jpg`}
+                            className="img-fluid rounded-1 cart-image"
                             alt="Cotton T-shirt"
                           />
                         </div>
                         <div className="col-md-3 col-lg-3 col-xl-3">
-                          <h6 className="text-muted">Shirt</h6>
-                          <h6 className="text-black mb-0">Cotton T-shirt</h6>
+                          <h6 className="">Shirt</h6>
+                          <h6 className="mb-0">Cotton T-shirt</h6>
                         </div>
                         <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
-                          <button className="btn btn-link px-2">
+                          <button className="btn custom-btn-quantity px-2">
                             <i className="fas fa-minus"></i>
                           </button>
 
@@ -85,18 +83,18 @@ function Cart() {
                             name="quantity"
                             value="1"
                             type="number"
-                            className="form-control form-control-sm"
+                            className="form-control form-control-sm cart-quantity"
                           />
 
-                          <button className="btn btn-link px-2">
+                          <button className="btn custom-btn-quantity px-2">
                             <i className="fas fa-plus"></i>
                           </button>
                         </div>
                         <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                          <h6 className="mb-0">€ 44.00</h6>
+                          <h6 className="mb-0">U$S 44.00</h6>
                         </div>
                         <div className="col-md-1 col-lg-1 col-xl-1 text-end">
-                          <a href="#!" className="text-muted">
+                          <a href="#!" className="">
                             <i className="fas fa-times"></i>
                           </a>
                         </div>
@@ -107,17 +105,17 @@ function Cart() {
                       <div className="row mb-4 d-flex justify-content-between align-items-center">
                         <div className="col-md-2 col-lg-2 col-xl-2">
                           <img
-                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img7.webp"
-                            className="img-fluid rounded-3"
+                            src={`${process.env.REACT_APP_API_URL}/lager-1.jpg`}
+                            className="img-fluid rounded-1 cart-image"
                             alt="Cotton T-shirt"
                           />
                         </div>
                         <div className="col-md-3 col-lg-3 col-xl-3">
-                          <h6 className="text-muted">Shirt</h6>
-                          <h6 className="text-black mb-0">Cotton T-shirt</h6>
+                          <h6 className="">Shirt</h6>
+                          <h6 className="mb-0">Cotton T-shirt</h6>
                         </div>
                         <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
-                          <button className="btn btn-link px-2">
+                          <button className="btn custom-btn-quantity px-2">
                             <i className="fas fa-minus"></i>
                           </button>
 
@@ -127,18 +125,18 @@ function Cart() {
                             name="quantity"
                             value="1"
                             type="number"
-                            className="form-control form-control-sm"
+                            className="form-control form-control-sm cart-quantity"
                           />
 
-                          <button className="btn btn-link px-2">
+                          <button className="btn custom-btn-quantity px-2">
                             <i className="fas fa-plus"></i>
                           </button>
                         </div>
                         <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                          <h6 className="mb-0">€ 44.00</h6>
+                          <h6 className="mb-0">U$S 44.00</h6>
                         </div>
                         <div className="col-md-1 col-lg-1 col-xl-1 text-end">
-                          <a href="#!" className="text-muted">
+                          <a href="#!" className="">
                             <i className="fas fa-times"></i>
                           </a>
                         </div>
@@ -146,40 +144,41 @@ function Cart() {
 
                       <hr className="my-4" />
 
-                      <div className="pt-5">
+                      {/* <div className="pt-5">
                         <h6 className="mb-0">
-                          <a href="#!" className="text-body">
+                          <a href="#!" className="back">
                             <i className="fas fa-long-arrow-alt-left me-2"></i>
                             Back to shop
                           </a>
                         </h6>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
-                  <div className="col-lg-4 bg-light">
+                  <div className="col-lg-5">
                     <div className="p-5">
                       <h4 className="fw-bold mb-5 mt-2 pt-1">Summary</h4>
                       <hr className="my-4" />
 
                       <div className="d-flex justify-content-between mb-4">
-                        <h6>items 3</h6>
-                        <h6>€ 132.00</h6>
+                        <h6>Items 3</h6>
+                        <h6>U$S 132.00</h6>
                       </div>
 
                       <hr className="my-4" />
 
                       <div className="d-flex justify-content-between mb-5">
                         <h6>Total price</h6>
-                        <h6>€ 137.00</h6>
+                        <h6>U$S 137.00</h6>
                       </div>
-
-                      <button
-                        type="button"
-                        className="btn btn-dark btn-block btn-lg"
-                        data-mdb-ripple-color="dark"
-                      >
-                        Checkout
-                      </button>
+                      <Link to={"/checkout"}>
+                        <button
+                          type="button"
+                          className="btn btn-cart-page btn-block btn-lg"
+                          data-mdb-ripple-color="dark"
+                        >
+                          Checkout
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

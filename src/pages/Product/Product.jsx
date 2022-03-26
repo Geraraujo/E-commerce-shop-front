@@ -97,7 +97,7 @@ function Product() {
           <section className="py-2">
             <div className="px-4 px-lg-5">
               <p className="display-6 fw-bold mb-5 py-3 text-center">Related products</p>
-              <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-5 justify-content-center">
+              <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
                 {relatedProducts &&
                   relatedProducts.map((product) => (
                     <div key={product.id} className="col-md-6 mb-6">
