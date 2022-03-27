@@ -1,5 +1,5 @@
-#navbar {
-  /* background-color: #ded589; */
+#navbar a {
+  color: #795548;
 }
 
 #navbar-brand {
@@ -8,7 +8,7 @@
   font-size: 1.6rem;
 }
 
-.btn-navbar-cart {
+.btn-navbar {
   border: #795548 1px solid;
 }
 
@@ -17,24 +17,36 @@
   font-size: 1rem;
 }
 
-.cart-icon {
+.cart-icon,
+.logout-icon,
+.login-icon {
   color: #795548;
+}
+
+#navbar-cart {
+  margin-right: 5px;
 }
 
 .btn .badge {
   top: 1px;
 }
 
-#navbar-cart:hover {
+#navbar-cart:hover,
+#navbar-logout:hover,
+#navbar-login:hover {
   background-color: #795548;
   opacity: 0.6;
 }
 
-#navbar-cart:hover > .cart-icon {
+#navbar-cart:hover > .cart-icon,
+#navbar-logout:hover > .logout-icon,
+#navbar-login:hover > .logout-icon {
   color: aliceblue;
 }
 
-#navbar-cart:hover > .navbar-badge {
+#navbar-cart:hover > .navbar-badge,
+#navbar-logout:hover > .navbar-badge,
+#navbar-login:hover > .navbar-badge {
   color: aliceblue;
 }
 
