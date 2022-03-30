@@ -70,7 +70,7 @@ function Cart() {
                                 ></i>
                               </button>
                             </div>
-                            <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                            <div className="col-md-3 col-lg-3 col-xl-3 offset-lg-1">
                               <h6 className="mb-0">U$S{(item.price * item.quantity).toFixed(2)}</h6>
                             </div>
                             <div className="col-md-1 col-lg-1 col-xl-1 text-end">
@@ -108,7 +108,6 @@ function Cart() {
 
                       <div className="d-flex justify-content-between mb-4">
                         <h6>Items {cartStore && cartStore.length}</h6>
-                        <h6>U$S 132.00</h6>
                       </div>
 
                       <hr className="my-4" />

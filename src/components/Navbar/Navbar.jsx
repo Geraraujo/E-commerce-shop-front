@@ -95,9 +95,8 @@ function NavbarMenu() {
           )}
 
           {userStore && (
-            <button id="navbar-logout" className="btn btn-navbar" onClick={handleClick}>
+            <button id="navbar-logout" className="btn btn-navbar ms-3" onClick={handleClick}>
               <LogoutIcon className="logout-icon"></LogoutIcon>
-              <span className="badge ms-1 navbar-badge">Logout</span>
             </button>
           )}
         </Container>
