@@ -1,12 +1,17 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import "./Product.css";
 
 function Product({ product }) {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const cartStore = useSelector((state) => state.cart);
 
   const handleClick = () => {
-    navigate("/cart");
+    dispatch({
+      type: "ADD_ITEM",
+      payload: product,
+    });
   };
   return (
     <>

@@ -11,6 +11,8 @@ import { useDispatch } from "react-redux";
 
 function NavbarMenu() {
   const userStore = useSelector((state) => state.user);
+  const cartStore = useSelector((state) => state.cart);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -79,7 +81,7 @@ function NavbarMenu() {
           <Link to="/cart">
             <button id="navbar-cart" className="btn btn-navbar" type="submit">
               <ShoppingCartIcon className="cart-icon"></ShoppingCartIcon>
-              <span className="badge ms-1 navbar-badge">0</span>
+              <span className="badge ms-1 navbar-badge">{cartStore && cartStore.length}</span>
             </button>
           </Link>
 
