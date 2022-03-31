@@ -28,9 +28,10 @@ function NavbarMenu() {
     <>
       <Navbar id="navbar" className="navbar navbar-expand-lg" expand="lg">
         <Container>
-          <Navbar.Brand className="navbar-brand fw-bold" id="navbar-brand" href="/">
+          <Link className="navbar-brand fw-bold" id="navbar-brand" to="/">
             CRAFTERS+
-          </Navbar.Brand>
+          </Link>
+
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto text-start">
