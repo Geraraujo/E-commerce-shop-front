@@ -39,3 +39,15 @@
     transform: rotate(360deg);
   }
 }
+.modalColor{
+  background-color: #795548;
+  border-color: #795548;
+ }
+ .modalColor:hover{
+   background-color: #6d4c40;
+   border-color: #6d4c40;
+ }
+ .modalTitle{
+   color: #795548;
+   font-size: xx-large;
+ }

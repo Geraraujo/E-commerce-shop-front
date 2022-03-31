@@ -13,14 +13,35 @@ import Product from "./pages/Product/Product";
 import Thanks from "./pages/Thanks/Thanks";
 import Register from "./pages/Register/Register";
 import PrivateRoute from "./components/PrivateRoute";
+import { Button, Modal } from "react-bootstrap";
+import { useState } from "react";
 
 function App() {
   const location = useLocation();
+  const [show, setShow] = useState(true);
+
+  const handleClose = () => setShow(false);
+
   return (
     <div className="App d-flex flex-column h-100">
       {location.pathname !== "/login" &&
         location.pathname !== "/register" &&
         location.pathname !== "/reset-password" && <Navbar />}
+      <>
+        <Modal backdrop="static" show={show} onHide={handleClose}>
+          <Modal.Header className="d-flex justify-content-center">
+            <Modal.Title className="navbar-brand fw-bold modalTitle">CRAFTERS+</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Please, confirm you're over 18 to continue looking for your beer</Modal.Body>
+          <Modal.Footer>
+            <Button className="modalColor">No</Button>
+            <Button variant="success" onClick={handleClose}>
+              Yes, i am
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
