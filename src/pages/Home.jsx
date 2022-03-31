@@ -38,8 +38,8 @@ function Home() {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block w-100 slide"
-            src="https://cdn.pixabay.com/photo/2015/09/05/23/33/beer-926287_960_720.jpg"
+            className="d-block w-100 img-fluid slide"
+            src="../../assets/carousel/certification-brewery-1170x660.jpeg"
             alt="Third slide"
           />
         </Carousel.Item>

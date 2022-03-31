@@ -44,16 +44,16 @@ function NavbarMenu() {
               <NavDropdown className="dropMenu" title="Categories" id="basic-nav-dropdown">
                 <Link
                   className="nav-link text-start p-0 d-flex justify-content-around"
-                  to="/category/lager"
+                  to="/category/belgian"
                 >
-                  <span className="navbar-dd-span">Lager</span> <SportsBarIcon fontSize="small" />
+                  <span className="navbar-dd-span">Belgian</span> <SportsBarIcon fontSize="small" />
                 </Link>
                 <NavDropdown.Divider />
                 <Link
                   className="nav-link text-start p-0 d-flex justify-content-around"
-                  to="category/red"
+                  to="category/hybrid"
                 >
-                  <span className="navbar-dd-span">Red</span> <SportsBarIcon fontSize="small" />
+                  <span className="navbar-dd-span">Hybrid</span> <SportsBarIcon fontSize="small" />
                 </Link>
                 <NavDropdown.Divider />
                 <Link
@@ -68,9 +68,9 @@ function NavbarMenu() {
                 <NavDropdown.Divider />
                 <Link
                   className="nav-link text-start p-0 d-flex justify-content-around"
-                  to="category/industrial"
+                  to="category/wheat-beers"
                 >
-                  <span className="navbar-dd-span">Industrial</span>
+                  <span className="navbar-dd-span">Wheat</span>
                   <span>
                     <SportsBarIcon fontSize="small" />
                   </span>
