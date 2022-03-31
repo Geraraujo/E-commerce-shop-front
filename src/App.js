@@ -12,6 +12,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Product from "./pages/Product/Product";
 import Thanks from "./pages/Thanks/Thanks";
 import Register from "./pages/Register/Register";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const location = useLocation();
@@ -27,9 +28,9 @@ function App() {
         <Route path="/category/:slug" element={<Category />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout" element={<PrivateRoute element={<Checkout />} />} />
         <Route path="/about" element={<About />} />
-        <Route path="/thanks" element={<Thanks />} />
+        <Route path="/thanks" element={<PrivateRoute element={<Thanks />} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {location.pathname !== "/login" &&

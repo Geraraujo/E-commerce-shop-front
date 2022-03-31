@@ -114,7 +114,7 @@ function Cart() {
 
                       <div className="d-flex justify-content-between mb-5">
                         <h6>Total price</h6>
-                        <h6>U$S {total}</h6>
+                        <h6>U$S {total.toFixed(2)}</h6>
                       </div>
                       <Link to={"/checkout"}>
                         <button
