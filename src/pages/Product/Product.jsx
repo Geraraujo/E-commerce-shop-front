@@ -67,17 +67,25 @@ function Product() {
             <div className="row gx-4 gx-lg-5 align-items-center">
               <div className="col-xl-6">
                 <Carousel controls={false}>
-                  {product.images.map((image) => (
-                    <Carousel.Item className="w-100">
-                      <div className="d-block w-100">
-                        <img
-                          className="slide w-100 img-fluid slide"
-                          src={`${process.env.REACT_APP_API_URL}/${image.name}`}
-                          alt={image.title}
-                        />
-                      </div>
-                    </Carousel.Item>
-                  ))}
+                  {product.images.length > 0 ? (
+                    product.images.map((image) => (
+                      <Carousel.Item className="w-100">
+                        <div className="d-block w-100">
+                          <img
+                            className="slide w-100 img-fluid slide"
+                            src={`${process.env.REACT_APP_API_URL}/${image.name}`}
+                            alt={image.title}
+                          />
+                        </div>
+                      </Carousel.Item>
+                    ))
+                  ) : (
+                    <img
+                      className="slide w-100 img-fluid slide"
+                      src={`${process.env.REACT_APP_API_URL}/no-photo-available.png`}
+                      alt={product.name}
+                    />
+                  )}
                 </Carousel>
               </div>
               <div className="col-xl-6">
