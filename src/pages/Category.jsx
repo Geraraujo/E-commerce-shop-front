@@ -15,7 +15,6 @@ function Category() {
       method: "GET",
       url: `${process.env.REACT_APP_API_URL}/category/${slug}`,
     });
-    console.log(response.data);
     setCategory(response.data);
   };
 

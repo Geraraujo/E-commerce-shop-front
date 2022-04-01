@@ -20,14 +20,26 @@ function Product({ product }) {
   });
   return (
     <>
-      <Link key={product.id} to={`/product/${product.id}`} className="product-link">
-        <img
-          id="related-product-image"
-          className="card-img-top mb-2"
-          src={`${process.env.REACT_APP_API_URL}/${product.images[0].name}`}
-          alt={product.images[0].title}
-        />
-      </Link>
+      {product.images.length > 0 ? (
+        <Link key={product.id} to={`/product/${product.id}`} className="product-link">
+          <img
+            id="related-product-image"
+            className="card-img-top mb-2"
+            src={`${process.env.REACT_APP_API_URL}/${product.images[0].name}`}
+            alt={product.images[0].title}
+          />
+        </Link>
+      ) : (
+        <Link key={product.id} to={`/product/${product.id}`} className="product-link">
+          <img
+            id="related-product-image"
+            className="card-img-top mb-2"
+            src={`${process.env.REACT_APP_API_URL}/no-photo-available.png`}
+            alt={product.name}
+          />
+        </Link>
+      )}
+
       <div className="mt-2 product-text-color">
         <div className="text-start">
           <h5 className="fw-bolder">{product.name}</h5>
