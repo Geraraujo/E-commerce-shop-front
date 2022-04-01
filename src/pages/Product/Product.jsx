@@ -65,11 +65,63 @@ function Product() {
               </div>
               <div className="col-xl-6">
                 <p className="display-5 fw-bold">{product.name}</p>
-                <div className="fs-5 mt-4 mb-4">
-                  <span>U$S{product.price}</span>
+                <div className="fs-5 mt-2 mb-2">
+                  {product.categoryId === 1 && (
+                    <div class="d-flex justify-content-start small text-warning mb-2">
+                      <span style={{ color: "#795548" }} className="me-2">
+                        Reviews:
+                      </span>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star"></div>
+                    </div>
+                  )}
+                  {product.categoryId === 2 && (
+                    <div class="d-flex justify-content-start small text-warning mb-2">
+                      <span style={{ color: "#795548" }} className="me-2">
+                        Reviews:
+                      </span>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-half"></div>
+                      <div class="bi-star"></div>
+                    </div>
+                  )}
+                  {product.categoryId === 3 && (
+                    <div class="d-flex justify-content-start small text-warning mb-2">
+                      <span style={{ color: "#795548" }} className="me-2">
+                        Reviews:
+                      </span>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                    </div>
+                  )}
+                  {product.categoryId === 4 && (
+                    <div class="d-flex justify-content-start small text-warning mb-2">
+                      <span style={{ color: "#795548" }} className="me-2">
+                        Reviews:
+                      </span>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-fill"></div>
+                      <div class="bi-star-half"></div>
+                    </div>
+                  )}
+
+                  <span>U$S {product.price}</span>
+                  <span class="text-decoration-line-through ms-4">
+                    U$S {(product.price * 1.25).toFixed(2)}
+                  </span>
                 </div>
                 <p className="lead text-start">{product.description}</p>
-                <div className="d-flex justify-content-center mt-5">
+                <div className="d-flex justify-content-start mt-5">
                   <input
                     className="form-control me-3"
                     id="product-input-quantity"
@@ -100,7 +152,7 @@ function Product() {
               <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
                 {relatedProducts &&
                   relatedProducts.map((product) => (
-                    <div key={product.id} className="col-md-6 mb-6">
+                    <div key={product.id} className="col-md-6 mb-5">
                       <ProductItem product={product} />{" "}
                     </div>
                   ))}
