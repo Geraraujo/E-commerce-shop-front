@@ -8,7 +8,7 @@ function About() {
       <p className="about-text">
         This project was performed with the target of fulfilling all the requirements of the final
         project of the Hack Academy 2022 Coding Bootcamp, which consisted of the creation of an
-        E-commerce, in a period of time three weeks.
+        E-commerce, in a period of time of three weeks.
       </p>
 
       <p>
