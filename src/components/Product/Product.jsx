@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Product.css";
+import { useEffect } from "react";
 
 function Product({ product }) {
   const dispatch = useDispatch();
@@ -13,6 +14,10 @@ function Product({ product }) {
       payload: product,
     });
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <>
       <Link key={product.id} to={`/product/${product.id}`} className="product-link">

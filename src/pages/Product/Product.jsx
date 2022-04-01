@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import ProductItem from "../../components/Product/Product";
 import "./Product.css";
 import { useDispatch } from "react-redux";
+import { Carousel } from "react-bootstrap";
 
 function Product() {
   const [product, setProduct] = useState();
@@ -61,16 +62,23 @@ function Product() {
   return (
     <main className="flex-shrink-0 text-start">
       {product && (
-        <section className="py-3">
+        <section id="mainSection" className="py-3">
           <div className="container px-4 px-lg-5 my-5">
             <div className="row gx-4 gx-lg-5 align-items-center">
               <div className="col-xl-6">
-                <img
-                  id="product-image"
-                  className="card-img-top mb-5 mb-md-0 shadow"
-                  src={`${process.env.REACT_APP_API_URL}/${product.images[0].name}`}
-                  alt={product.images[0].title}
-                />
+                <Carousel controls={false}>
+                  {product.images.map((image) => (
+                    <Carousel.Item className="w-100">
+                      <div className="d-block w-100">
+                        <img
+                          className="slide w-100 img-fluid slide"
+                          src={`${process.env.REACT_APP_API_URL}/${image.name}`}
+                          alt={image.title}
+                        />
+                      </div>
+                    </Carousel.Item>
+                  ))}
+                </Carousel>
               </div>
               <div className="col-xl-6">
                 <p className="display-5 fw-bold">{product.name}</p>
