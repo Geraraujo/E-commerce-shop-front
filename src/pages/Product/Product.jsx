@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ProductItem from "../../components/Product/Product";
 import "./Product.css";
+import { useDispatch } from "react-redux";
 
 function Product() {
   const [product, setProduct] = useState();
   const [relatedProducts, setRelatedProducts] = useState();
   const [quantity, setQuantity] = useState(1);
   const params = useParams();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -19,7 +19,9 @@ function Product() {
           url: `${process.env.REACT_APP_API_URL}/products/${params.id}`,
         });
         setProduct(response.data);
-      } catch (err) {}
+      } catch (err) {
+        console.log(err);
+      }
     };
 
     getProduct();
@@ -34,19 +36,26 @@ function Product() {
             url: `${process.env.REACT_APP_API_URL}/products/${product.categoryId}/category`,
           });
           setRelatedProducts(response.data.filter((product) => product.id !== Number(params.id)));
-        } catch (err) {}
+        } catch (err) {
+          console.log(err);
+        }
       };
 
       if (product) getRelatedProducts();
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   }, [product]);
 
   const handleOnchange = (quantity) => {
     setQuantity(quantity);
   };
-
+  const dispatch = useDispatch();
   const handleClick = () => {
-    navigate("/cart");
+    dispatch({
+      type: "ADD_ITEM",
+      payload: product,
+    });
   };
 
   return (
