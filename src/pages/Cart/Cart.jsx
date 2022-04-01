@@ -40,7 +40,7 @@ function Cart() {
                             <div className="col-md-2 col-lg-2 col-xl-2">
                               <img
                                 src={`${process.env.REACT_APP_API_URL}/${item.images[0].name}`}
-                                className="img-fluid rounded-1 cart-image"
+                                className="img-thumbnail"
                                 alt={item.name}
                               />
                             </div>
