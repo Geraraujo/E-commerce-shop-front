@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ProductItem from "../../components/Product/Product";
 import "./Product.css";
 import { useDispatch } from "react-redux";
@@ -139,13 +139,15 @@ function Product() {
                     onChange={(ev) => handleOnchange(ev.target.value)}
                     style={{ maxWidth: "3rem" }}
                   />
-                  <button
-                    className="btn btn-product-page flex-shrink-0"
-                    onClick={() => handleClick()}
-                  >
-                    <i className="bi-cart-fill me-1"></i>
-                    Add to cart
-                  </button>
+                  <Link to="/cart">
+                    <button
+                      className="btn btn-product-page flex-shrink-0"
+                      onClick={() => handleClick()}
+                    >
+                      <i className="bi-cart-fill me-1"></i>
+                      Add to cart
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

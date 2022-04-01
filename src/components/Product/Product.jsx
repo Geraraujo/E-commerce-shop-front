@@ -15,7 +15,6 @@ function Product({ product }) {
   };
   return (
     <>
-      {/* <div className="card custom-product-card h-100 shadow"> */}
       <Link key={product.id} to={`/product/${product.id}`} className="product-link">
         <img
           id="related-product-image"
@@ -83,16 +82,14 @@ function Product({ product }) {
         </div>
       </div>
       <div className="pt-0 border-top-0 bg-transparent">
-        {/* TODO: for next sprint (01/04) */}
-        {
-          <div className="mt-2 mb-3 text-start product-text-color">
+        <div className="mt-2 mb-3 text-start product-text-color">
+          <Link to={"/cart"}>
             <button className="btn btn-product-add-cart" onClick={() => handleClick()}>
               Add to cart
             </button>
-          </div>
-        }
+          </Link>
+        </div>
       </div>
-      {/* </div> */}
     </>
   );
 }
