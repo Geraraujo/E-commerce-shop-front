@@ -1,12 +1,11 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Product.css";
 import { useEffect } from "react";
 
 function Product({ product }) {
   const dispatch = useDispatch();
-  const cartStore = useSelector((state) => state.cart);
 
   const handleClick = () => {
     dispatch({

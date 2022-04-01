@@ -11,7 +11,7 @@ function Cart() {
     let totalPrice = 0;
     cartStore.map((item) => {
       let price = item.price * item.quantity;
-      totalPrice = totalPrice + price;
+      return (totalPrice = totalPrice + price);
     });
     setTotal(totalPrice);
   }, [cartStore]);

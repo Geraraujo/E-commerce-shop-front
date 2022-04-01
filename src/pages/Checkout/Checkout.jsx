@@ -6,7 +6,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import { brown } from "@mui/material/colors";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
@@ -23,6 +23,7 @@ function Checkout() {
   const [selectedValue, setSelectedValue] = useState("a");
   const store = useSelector((store) => store);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
   };
@@ -38,7 +39,7 @@ function Checkout() {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios({
+      await axios({
         method: "POST",
         url: `${process.env.REACT_APP_API_URL}/order`,
         data: {
@@ -51,6 +52,7 @@ function Checkout() {
           },
         },
       });
+      dispatch({ type: "REMOVE_ALL_ITEMS" });
       navigate("/thanks");
     } catch (err) {
       console.log(err);
