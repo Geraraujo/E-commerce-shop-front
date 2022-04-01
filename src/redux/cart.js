@@ -31,6 +31,8 @@ function cart(state = [], action) {
 
     case "REMOVE_ITEM":
       return state.filter((item) => item.id !== action.payload.id);
+    case "REMOVE_ALL_ITEMS":
+      return [];
     default:
       return state;
   }
