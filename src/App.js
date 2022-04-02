@@ -15,6 +15,8 @@ import Register from "./pages/Register/Register";
 import PrivateRoute from "./components/PrivateRoute";
 import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const location = useLocation();
@@ -24,6 +26,17 @@ function App() {
 
   return (
     <div className="App d-flex flex-column h-100">
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       {location.pathname !== "/login" &&
         location.pathname !== "/register" &&
         location.pathname !== "/reset-password" && <Navbar />}

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Product.css";
 import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 function Product({ product }) {
   const dispatch = useDispatch();
@@ -12,11 +13,23 @@ function Product({ product }) {
       type: "ADD_ITEM",
       payload: product,
     });
+
+    toast.success("Item added to cart!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      toastId: "success",
+    });
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
   });
+
   return (
     <>
       {product.images.length > 0 ? (
@@ -99,11 +112,9 @@ function Product({ product }) {
       </div>
       <div className="pt-0 border-top-0 bg-transparent">
         <div className="mt-2 mb-3 text-start product-text-color">
-          <Link to={"/cart"}>
-            <button className="btn btn-product-add-cart" onClick={() => handleClick()}>
-              Add to cart
-            </button>
-          </Link>
+          <button className="btn btn-product-add-cart" onClick={() => handleClick()}>
+            Add to cart
+          </button>
         </div>
       </div>
     </>

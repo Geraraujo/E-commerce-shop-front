@@ -5,6 +5,7 @@ import ProductItem from "../../components/Product/Product";
 import "./Product.css";
 import { useDispatch } from "react-redux";
 import { Carousel } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 function Product() {
   const [product, setProduct] = useState();
@@ -51,11 +52,24 @@ function Product() {
   const handleOnchange = (quantity) => {
     setQuantity(quantity);
   };
+
   const dispatch = useDispatch();
+
   const handleClick = () => {
     dispatch({
       type: "ADD_ITEM",
       payload: product,
+    });
+
+    toast.success("Item added to cart!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      toastId: "success",
     });
   };
 
@@ -69,7 +83,7 @@ function Product() {
                 <Carousel controls={false}>
                   {product.images.length > 0 ? (
                     product.images.map((image) => (
-                      <Carousel.Item className="w-100">
+                      <Carousel.Item key={image.name} className="w-100">
                         <div className="d-block w-100">
                           <img
                             className="slide w-100 img-fluid slide"
@@ -155,15 +169,13 @@ function Product() {
                     onChange={(ev) => handleOnchange(ev.target.value)}
                     style={{ maxWidth: "3rem" }}
                   />
-                  <Link to="/cart">
-                    <button
-                      className="btn btn-product-page flex-shrink-0"
-                      onClick={() => handleClick()}
-                    >
-                      <i className="bi-cart-fill me-1"></i>
-                      Add to cart
-                    </button>
-                  </Link>
+                  <button
+                    className="btn btn-product-page flex-shrink-0"
+                    onClick={() => handleClick()}
+                  >
+                    <i className="bi-cart-fill me-1"></i>
+                    Add to cart
+                  </button>
                 </div>
               </div>
             </div>
