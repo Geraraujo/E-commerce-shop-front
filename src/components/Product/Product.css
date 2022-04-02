@@ -2,7 +2,11 @@
   height: 400px;
   width: 100%;
   object-fit: cover;
-  border-radius: 5px;
+  padding: 10px;
+}
+
+.product-text-color {
+  padding: 10px;
 }
 
 .custom-product-card {

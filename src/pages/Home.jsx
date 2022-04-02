@@ -19,12 +19,13 @@ function Home() {
 
   return (
     <>
-      <Carousel>
+      <Carousel controls={false}>
         <Carousel.Item className="w-100">
           <div className="d-block w-100">
             <img
               className="slide w-100 img-fluid slide"
-              src="https://images.unsplash.com/photo-1615332579037-3c44b3660b53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+              // src="https://images.unsplash.com/photo-1615332579037-3c44b3660b53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+              src="../../assets/carousel/carousel-crafters.jpg"
               alt=""
             />
           </div>
