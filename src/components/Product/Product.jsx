@@ -16,7 +16,7 @@ function Product({ product }) {
 
     toast.success("Item added to cart!", {
       position: "top-right",
-      autoClose: 5000,
+      autoClose: 2000,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
