@@ -2,9 +2,10 @@ import React from "react";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function Login() {
+  const cartStore = useSelector((state) => state.cart);
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ function Login() {
         payload: response.data,
       });
 
-      navigate("/");
+      cartStore.length > 0 ? navigate("/checkout") : navigate("/");
     } catch (err) {
       err.response.status === 400 ? alert("Incorrect email or password") : alert(err.response);
     }

@@ -43,13 +43,13 @@ function App() {
       <>
         <Modal backdrop="static" show={show} onHide={handleClose}>
           <Modal.Header className="d-flex justify-content-center">
-            <Modal.Title className="navbar-brand fw-bold modalTitle">CRAFTERS+</Modal.Title>
+            <Modal.Title className="navbar-brand fw-bold modalTitle">CRAFTERS</Modal.Title>
           </Modal.Header>
           <Modal.Body>Please, confirm you're over 18 to continue looking for your beer</Modal.Body>
           <Modal.Footer>
             <Button className="modalColor">No</Button>
             <Button variant="success" onClick={handleClose}>
-              Yes, i am
+              Yes, I am
             </Button>
           </Modal.Footer>
         </Modal>

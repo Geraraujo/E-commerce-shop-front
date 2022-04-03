@@ -29,7 +29,7 @@ function NavbarMenu() {
       <Navbar id="navbar" className="navbar navbar-expand-lg" expand="lg">
         <Container>
           <Link className="navbar-brand fw-bold" id="navbar-brand" to="/">
-            CRAFTERS+
+            CRAFTERS
           </Link>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
