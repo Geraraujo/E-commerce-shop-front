@@ -39,7 +39,7 @@ function Login() {
       <section className="text-start text-lg-start">
         <link rel="stylesheet" href="./Login.css" />
 
-        <div className="container py-5">
+        <div className="container">
           <div className="row g-0 align-items-center py-5">
             <div className="col-lg-6 mb-5 mb-lg-0">
               <div
@@ -105,7 +105,11 @@ function Login() {
             </div>
 
             <div className="col-lg-6 mb-5 mb-lg-0">
-              <img src="./assets/login.jpg" className="w-100 rounded-4 shadow-4" alt="" />
+              <img
+                src="./assets/login.jpg"
+                className="w-100 rounded-4 shadow-4 custom-login-image"
+                alt=""
+              />
             </div>
           </div>
         </div>

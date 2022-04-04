@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ProductItem from "../../components/Product/Product";
 import "./Product.css";
 import { useDispatch } from "react-redux";
@@ -10,7 +10,6 @@ import { toast } from "react-toastify";
 function Product() {
   const [product, setProduct] = useState();
   const [relatedProducts, setRelatedProducts] = useState();
-  const [quantity, setQuantity] = useState(1);
   const params = useParams();
 
   useEffect(() => {
@@ -48,10 +47,6 @@ function Product() {
       console.log(err);
     }
   }, [product]);
-
-  const handleOnchange = (quantity) => {
-    setQuantity(quantity);
-  };
 
   const dispatch = useDispatch();
 
@@ -161,14 +156,6 @@ function Product() {
                 </div>
                 <p className="lead text-start">{product.description}</p>
                 <div className="d-flex justify-content-start mt-5">
-                  <input
-                    className="form-control me-3"
-                    id="product-input-quantity"
-                    type="number"
-                    value={quantity}
-                    onChange={(ev) => handleOnchange(ev.target.value)}
-                    style={{ maxWidth: "3rem" }}
-                  />
                   <button
                     className="btn btn-product-page flex-shrink-0"
                     onClick={() => handleClick()}
