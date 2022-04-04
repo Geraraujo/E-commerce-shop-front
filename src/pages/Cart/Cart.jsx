@@ -39,7 +39,7 @@ function Cart() {
                           >
                             <div className="col-md-2 col-lg-2 col-xl-2">
                               <img
-                                src={`${process.env.REACT_APP_API_URL}/${item.images[0].name}`}
+                                src={`${process.env.REACT_APP_BUCKET_URL}/${item.images[0].name}`}
                                 className="img-thumbnail"
                                 alt={item.name}
                               />

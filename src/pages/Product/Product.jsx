@@ -87,7 +87,7 @@ function Product() {
                         <div className="d-block w-100">
                           <img
                             className="slide w-100 img-fluid slide"
-                            src={`${process.env.REACT_APP_API_URL}/${image.name}`}
+                            src={`${process.env.REACT_APP_BUCKET_URL}/${image.name}`}
                             alt={image.title}
                           />
                         </div>
@@ -96,7 +96,7 @@ function Product() {
                   ) : (
                     <img
                       className="slide w-100 img-fluid slide"
-                      src={`${process.env.REACT_APP_API_URL}/no-photo-available.png`}
+                      src={`${process.env.REACT_APP_BUCKET_URL}/no-photo-available.png`}
                       alt={product.name}
                     />
                   )}

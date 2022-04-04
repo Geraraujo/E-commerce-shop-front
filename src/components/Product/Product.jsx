@@ -37,7 +37,7 @@ function Product({ product }) {
           <img
             id="related-product-image"
             className="mb-2"
-            src={`${process.env.REACT_APP_API_URL}/${product.images[0].name}`}
+            src={`${process.env.REACT_APP_BUCKET_URL}/${product.images[0].name}`}
             alt={product.images[0].title}
           />
         </Link>
@@ -46,7 +46,7 @@ function Product({ product }) {
           <img
             id="related-product-image"
             className="mb-2"
-            src={`${process.env.REACT_APP_API_URL}/no-photo-available.png`}
+            src={`${process.env.REACT_APP_BUCKET_URL}/no-photo-available.png`}
             alt={product.name}
           />
         </Link>
