@@ -74,16 +74,15 @@ function Cart() {
                               <h6 className="mb-0">U$S{(item.price * item.quantity).toFixed(2)}</h6>
                             </div>
                             <div className="col-md-1 col-lg-1 col-xl-1 text-end">
-                              <a
+                              <i
+                                className="fas fa-times"
                                 onClick={() =>
                                   dispatch({
                                     type: "REMOVE_ITEM",
                                     payload: item,
                                   })
                                 }
-                              >
-                                <i className="fas fa-times"></i>
-                              </a>
+                              ></i>
                             </div>
                           </div>
                         ))}
@@ -91,11 +90,9 @@ function Cart() {
 
                       <div className="pt-5">
                         <h6 className="mb-0">
-                          <Link to="/">
-                            <a className="back">
-                              <i className="fas fa-long-arrow-alt-left me-2"></i>
-                              Back to shop
-                            </a>
+                          <Link to="/" className="back">
+                            <i className="fas fa-long-arrow-alt-left me-2"></i>
+                            Back to shop
                           </Link>
                         </h6>
                       </div>

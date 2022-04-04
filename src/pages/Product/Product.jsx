@@ -106,56 +106,56 @@ function Product() {
                 <p className="display-5 fw-bold">{product.name}</p>
                 <div className="fs-5 mt-2 mb-2">
                   {product.categoryId === 1 && (
-                    <div class="d-flex justify-content-start small text-warning mb-2">
+                    <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
                       </span>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star"></div>
                     </div>
                   )}
                   {product.categoryId === 2 && (
-                    <div class="d-flex justify-content-start small text-warning mb-2">
+                    <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
                       </span>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star-half"></div>
-                      <div class="bi-star"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star-half"></div>
+                      <div className="bi-star"></div>
                     </div>
                   )}
                   {product.categoryId === 3 && (
-                    <div class="d-flex justify-content-start small text-warning mb-2">
+                    <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
                       </span>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star-fill"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star-fill"></div>
                     </div>
                   )}
                   {product.categoryId === 4 && (
-                    <div class="d-flex justify-content-start small text-warning mb-2">
+                    <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
                       </span>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star-fill"></div>
-                      <div class="bi-star-half"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star-fill"></div>
+                      <div className="bi-star-half"></div>
                     </div>
                   )}
 
                   <span>U$S {product.price}</span>
-                  <span class="text-decoration-line-through ms-4">
+                  <span className="text-decoration-line-through ms-4">
                     U$S {(product.price * 1.25).toFixed(2)}
                   </span>
                 </div>

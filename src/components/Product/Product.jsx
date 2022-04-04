@@ -56,48 +56,48 @@ function Product({ product }) {
         <div className="text-start">
           <h5 className="fw-bolder">{product.name}</h5>
           {product.categoryId === 1 && (
-            <div class="d-flex justify-content-start small text-warning mb-2">
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-              <div class="bi-star"></div>
+            <div className="d-flex justify-content-start small text-warning mb-2">
+              <div className="bi-star-fill"></div>
+              <div className="bi-star-fill"></div>
+              <div className="bi-star-fill"></div>
+              <div className="bi-star-fill"></div>
+              <div className="bi-star"></div>
               <span style={{ color: "#795548" }} className="ms-2">
                 {`${Math.round(Math.random() * (5000 - 500) + 500)} reviews`}
               </span>
             </div>
           )}
           {product.categoryId === 2 && (
-            <div class="d-flex justify-content-start small text-warning mb-2">
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-half"></div>
-              <div class="bi-star"> </div>
+            <div className="d-flex justify-content-start small text-warning mb-2">
+              <div className="bi-star-fill"></div>
+              <div className="bi-star-fill"></div>
+              <div className="bi-star-fill"></div>
+              <div className="bi-star-half"></div>
+              <div className="bi-star"> </div>
               <span style={{ color: "#795548" }} className="ms-2">
                 {`${Math.round(Math.random() * (5000 - 500) + 500)} reviews`}
               </span>
             </div>
           )}
           {product.categoryId === 3 && (
-            <div class="d-flex justify-content-start small text-warning mb-2">
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
+            <div className="d-flex justify-content-start small text-warning mb-2">
+              <div className="bi-star-fill"></div>
+              <div className="bi-star-fill"></div>
+              <div className="bi-star-fill"></div>
+              <div className="bi-star-fill"></div>
+              <div className="bi-star-fill"></div>
               <span style={{ color: "#795548" }} className="ms-2">
                 {`${Math.round(Math.random() * (5000 - 500) + 500)} reviews`}
               </span>
             </div>
           )}
           {product.categoryId === 4 && (
-            <div class="d-flex justify-content-start small text-warning mb-2">
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-half"></div>
+            <div className="d-flex justify-content-start small text-warning mb-2">
+              <div className="bi-star-fill"></div>
+              <div className="bi-star-fill"></div>
+              <div className="bi-star-fill"></div>
+              <div className="bi-star-fill"></div>
+              <div className="bi-star-half"></div>
               <span style={{ color: "#795548" }} className="ms-2">
                 {`${Math.round(Math.random() * (5000 - 500) + 500)} reviews`}
               </span>
@@ -105,7 +105,7 @@ function Product({ product }) {
           )}
 
           <span>U$S {product.price}</span>
-          <span class="text-decoration-line-through ms-4">
+          <span className="text-decoration-line-through ms-4">
             U$S {(product.price * 1.25).toFixed(2)}
           </span>
         </div>

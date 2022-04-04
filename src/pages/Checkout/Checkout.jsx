@@ -11,16 +11,16 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 
 function Checkout() {
-  const [firstname, setFirstname] = useState("asd");
-  const [lastname, setLastname] = useState("asd");
-  const [email, setEmail] = useState("asd@asd");
-  const [city, setCity] = useState("asd");
-  const [street, setStreet] = useState("asd");
-  const [portNumber, setPortNumber] = useState("123");
-  const [apartamentNumber, setApartamentNumber] = useState("123");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [city, setCity] = useState("");
+  const [street, setStreet] = useState("");
+  const [portNumber, setPortNumber] = useState("");
+  const [apartamentNumber, setApartamentNumber] = useState("");
   const [total, setTotal] = useState(0);
 
-  const [selectedValue, setSelectedValue] = useState("a");
+  const [selectedValue, setSelectedValue] = useState("");
   const store = useSelector((store) => store);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -70,7 +70,7 @@ function Checkout() {
   return (
     <>
       <main>
-        <div className="container py-5 text-start">
+        <div className="container py-4 text-start">
           <div className="row">
             <div className="col-md-4 order-md-2 mb-4">
               <h4 className="d-flex justify-content-between align-items-center mb-3">
@@ -98,18 +98,12 @@ function Checkout() {
               </ul>
             </div>
             <div className="col-md-8 order-md-1">
-              <div className="d-flex justify-content-around mb-4">
-                <img src="../../assets/visa.png" className="payment-logo" alt="" />
-                <img src="../../assets/master.png" className="payment-logo" alt="" />
-                <img src="../../assets/paypal.png" className="payment-logo" alt="" />
-              </div>
-
               <h4 className="mb-3">Billing address</h4>
               <hr className="mt-4 mb-4" />
               <form onSubmit={onSubmit} className="needs-validation">
                 <div className="row">
                   <div className="col-md-6 mb-3">
-                    <label for="firstName">First name</label>
+                    <label htmlFor="firstName">First name</label>
                     <input
                       onChange={(event) => setFirstname(event.target.value)}
                       value={firstname}
@@ -121,7 +115,7 @@ function Checkout() {
                     <div className="invalid-feedback">Valid first name is required.</div>
                   </div>
                   <div className="col-md-6 mb-3">
-                    <label for="lastName">Last name</label>
+                    <label htmlFor="lastName">Last name</label>
                     <input
                       onChange={(event) => setLastname(event.target.value)}
                       value={lastname}
@@ -135,7 +129,7 @@ function Checkout() {
                 </div>
 
                 <div className="mb-3">
-                  <label for="email">Email</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     onChange={(event) => setEmail(event.target.value)}
                     value={email}
@@ -151,7 +145,7 @@ function Checkout() {
 
                 <div className="row">
                   <div className="col-md-6 mb-3">
-                    <label for="city">City</label>
+                    <label htmlFor="city">City</label>
                     <input
                       onChange={(event) => setCity(event.target.value)}
                       value={city}
@@ -165,7 +159,7 @@ function Checkout() {
                   </div>
 
                   <div className="col-md-6 mb-3">
-                    <label for="street">Street</label>
+                    <label htmlFor="street">Street</label>
                     <input
                       onChange={(event) => setStreet(event.target.value)}
                       value={street}
@@ -180,7 +174,7 @@ function Checkout() {
 
                 <div className="row">
                   <div className="col-md-6 mb-3">
-                    <label for="portNumber">Port number</label>
+                    <label htmlFor="portNumber">Port number</label>
                     <input
                       onChange={(event) => setPortNumber(event.target.value)}
                       value={portNumber}
@@ -194,7 +188,7 @@ function Checkout() {
                   </div>
 
                   <div className="col-md-6 mb-3">
-                    <label for="apartamentNumber">Apartament number</label>
+                    <label htmlFor="apartamentNumber">Apartament number</label>
                     <input
                       onChange={(event) => setApartamentNumber(event.target.value)}
                       value={apartamentNumber}
@@ -208,7 +202,11 @@ function Checkout() {
 
                 <hr className="mt-4 mb-4" />
 
+                <div className="text-start mb-3">
+                  <img src="../../assets/pm.svg" className="payment-logo" alt="" />
+                </div>
                 <h4>Payment</h4>
+
                 <FormControl>
                   <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
@@ -265,7 +263,7 @@ function Checkout() {
                 <hr className="mt-4 mb-4" />
                 <div className="row">
                   <div className="col-md-6 mb-3">
-                    <label for="cc-name">Name on card</label>
+                    <label htmlFor="cc-name">Name on card</label>
                     <input
                       type="text"
                       className="form-control"
@@ -277,7 +275,7 @@ function Checkout() {
                     <div className="invalid-feedback">Name on card is required</div>
                   </div>
                   <div className="col-md-6 mb-3">
-                    <label for="cc-number">Credit card number</label>
+                    <label htmlFor="cc-number">Credit card number</label>
                     <input
                       type="text"
                       className="form-control"
@@ -290,7 +288,7 @@ function Checkout() {
                 </div>
                 <div className="row">
                   <div className="col-md-3 mb-3">
-                    <label for="cc-expiration">Expiration</label>
+                    <label htmlFor="cc-expiration">Expiration</label>
                     <input
                       type="text"
                       className="form-control"
@@ -301,7 +299,7 @@ function Checkout() {
                     <div className="invalid-feedback">Expiration date required</div>
                   </div>
                   <div className="col-md-3 mb-3">
-                    <label for="cc-cvv">CVV</label>
+                    <label htmlFor="cc-cvv">CVV</label>
                     <input
                       type="text"
                       className="form-control"
