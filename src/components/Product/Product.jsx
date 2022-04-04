@@ -55,7 +55,7 @@ function Product({ product }) {
       <div className="mt-2 product-text-color">
         <div className="text-start">
           <h5 className="fw-bolder">{product.name}</h5>
-          {product.categoryId === 1 && (
+          {Number(product.categoryId) === 1 && (
             <div className="d-flex justify-content-start small text-warning mb-2">
               <div className="bi-star-fill"></div>
               <div className="bi-star-fill"></div>
@@ -67,7 +67,7 @@ function Product({ product }) {
               </span>
             </div>
           )}
-          {product.categoryId === 2 && (
+          {Number(product.categoryId) === 2 && (
             <div className="d-flex justify-content-start small text-warning mb-2">
               <div className="bi-star-fill"></div>
               <div className="bi-star-fill"></div>
@@ -79,7 +79,7 @@ function Product({ product }) {
               </span>
             </div>
           )}
-          {product.categoryId === 3 && (
+          {Number(product.categoryId) === 3 && (
             <div className="d-flex justify-content-start small text-warning mb-2">
               <div className="bi-star-fill"></div>
               <div className="bi-star-fill"></div>
@@ -91,7 +91,7 @@ function Product({ product }) {
               </span>
             </div>
           )}
-          {product.categoryId === 4 && (
+          {Number(product.categoryId) === 4 && (
             <div className="d-flex justify-content-start small text-warning mb-2">
               <div className="bi-star-fill"></div>
               <div className="bi-star-fill"></div>

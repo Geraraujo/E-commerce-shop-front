@@ -100,7 +100,7 @@ function Product() {
               <div className="col-xl-6">
                 <p className="display-5 fw-bold">{product.name}</p>
                 <div className="fs-5 mt-2 mb-2">
-                  {product.categoryId === 1 && (
+                  {Number(product.categoryId) === 1 && (
                     <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
@@ -112,7 +112,7 @@ function Product() {
                       <div className="bi-star"></div>
                     </div>
                   )}
-                  {product.categoryId === 2 && (
+                  {Number(product.categoryId) === 2 && (
                     <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
@@ -124,7 +124,7 @@ function Product() {
                       <div className="bi-star"></div>
                     </div>
                   )}
-                  {product.categoryId === 3 && (
+                  {Number(product.categoryId) === 3 && (
                     <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
@@ -136,7 +136,7 @@ function Product() {
                       <div className="bi-star-fill"></div>
                     </div>
                   )}
-                  {product.categoryId === 4 && (
+                  {Number(product.categoryId) === 4 && (
                     <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
