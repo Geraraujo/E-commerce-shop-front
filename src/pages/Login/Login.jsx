@@ -40,7 +40,7 @@ function Login() {
         <link rel="stylesheet" href="./Login.css" />
 
         <div className="container">
-          <div className="row g-0 align-items-center py-5">
+          <div className="row g-0 align-items-center py-4">
             <div className="col-lg-6 mb-5 mb-lg-0">
               <div
                 className="card cascading-right"
@@ -104,7 +104,7 @@ function Login() {
               </div>
             </div>
 
-            <div className="col-lg-6 mb-5 mb-lg-0">
+            <div className="col-lg-6 mb-5 mb-lg-0 img-fluid">
               <img
                 src="./assets/login.jpg"
                 className="w-100 rounded-4 shadow-4 custom-login-image"
