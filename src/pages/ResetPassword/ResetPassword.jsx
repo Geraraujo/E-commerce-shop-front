@@ -1,40 +1,30 @@
 import React from "react";
-import "./Register.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 
-function Register() {
-  const [firstname, setFirstname] = React.useState("");
-  const [lastname, setLastname] = React.useState("");
+function ResetPassword() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [phone, setPhone] = React.useState("");
+  const [newPassword, setnewPassword] = React.useState("");
   const [apiStatus, setApiStatus] = React.useState();
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
 
     try {
-      const response = await axios({
+      await axios({
         url: `${process.env.REACT_APP_API_URL}/users`,
-        method: "POST",
+        method: "PATCH",
         data: {
-          firstname: firstname,
-          lastname: lastname,
-          email: email,
-          password: password,
-          phone: phone,
+          email,
+          password,
+          newPassword,
         },
       });
-      dispatch({
-        type: "REGISTER",
-        payload: response.data,
-      });
-      navigate("/");
+
+      navigate("/login");
     } catch (err) {
       setApiStatus(err.response.status);
     }
@@ -58,34 +48,6 @@ function Register() {
                   <h2 className="fw-bold mb-4 text-center">Register</h2>
                   <form onSubmit={(ev) => handleSubmit(ev)}>
                     <div className="form-outline mb-4">
-                      <label className="form-label" htmlFor="form3Example3">
-                        Firstname
-                      </label>
-                      <input
-                        type="text"
-                        id="firstname"
-                        name="firstname"
-                        className="form-control"
-                        value={firstname}
-                        onChange={(ev) => setFirstname(ev.target.value)}
-                      />
-                    </div>
-
-                    <div className="form-outline mb-4">
-                      <label className="form-label" htmlFor="form3Example4">
-                        Lastname
-                      </label>
-                      <input
-                        type="text"
-                        id="lastname"
-                        name="lastname"
-                        className="form-control"
-                        value={lastname}
-                        onChange={(ev) => setLastname(ev.target.value)}
-                      />
-                    </div>
-
-                    <div className="form-outline mb-4">
                       <label className="form-label" htmlFor="form3Example4">
                         Email
                       </label>
@@ -98,9 +60,7 @@ function Register() {
                         onChange={(ev) => setEmail(ev.target.value)}
                       />
                       {apiStatus === 409 && (
-                        <h4 className="text-danger fw-bold mt-1 small">
-                          This email already exists, please select other.
-                        </h4>
+                        <h4 className="text-danger fw-bold mt-1 small">Wrong email or password.</h4>
                       )}
                     </div>
 
@@ -116,24 +76,27 @@ function Register() {
                         value={password}
                         onChange={(ev) => setPassword(ev.target.value)}
                       />
+                      {apiStatus === 409 && (
+                        <h4 className="text-danger fw-bold mt-1 small">Wrong email or password.</h4>
+                      )}
                     </div>
 
                     <div className="form-outline mb-4">
-                      <label className="form-label" htmlFor="form3Example4">
-                        Phone
+                      <label className="form-label" htmlFor="newPassword">
+                        New password
                       </label>
                       <input
-                        type="text"
-                        id="phone"
-                        name="name"
+                        type="password"
+                        id="newPassword"
+                        name="newPassword"
                         className="form-control"
-                        value={phone}
-                        onChange={(ev) => setPhone(ev.target.value)}
+                        value={newPassword}
+                        onChange={(ev) => setnewPassword(ev.target.value)}
                       />
                     </div>
 
                     <button type="submit" className="btn btn-register btn-block mb-4">
-                      Register
+                      Change password
                     </button>
                   </form>
                 </div>
@@ -150,4 +113,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default ResetPassword;
