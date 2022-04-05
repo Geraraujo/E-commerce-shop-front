@@ -5,4 +5,27 @@
 
 .ul-list {
   list-style: none;
+  margin-left: -2rem;
+}
+.img-rounded {
+  object-fit: cover;
+}
+.icon-size {
+  font-size: 1.5rem;
+}
+.team-cards {
+  margin-top: 30px;
+  background: #7955481f;
+  height: 100%;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+.vercel {
+  margin-left: -1rem;
+}
+.mysql {
+  margin-left: -0.4rem;
+}
+.node {
+  margin-left: -0.2rem;
 }
