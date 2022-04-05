@@ -39,9 +39,13 @@ function Checkout() {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
+      console.log(store.cart);
       await axios({
         method: "POST",
-        url: `${process.env.REACT_APP_API_URL}/order`,
+        url: `${process.env.REACT_APP_API_URL}/orders`,
+        headers: {
+          Authorization: `Bearer ${store.user.token}`,
+        },
         data: {
           products: store.cart,
           address: {
