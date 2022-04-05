@@ -154,7 +154,7 @@ function About() {
           <a href="https://crafters-admin.vercel.app/" target="_blank" rel="noreferrer">
             section
           </a>{" "}
-          where it is possible to perform administrator actions . <link></link>
+          where it is possible to perform administrator actions. <link></link>
         </p>
 
         <p className="fw-bold">Use these credentials to login:</p>
