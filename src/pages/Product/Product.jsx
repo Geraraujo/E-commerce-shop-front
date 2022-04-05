@@ -26,7 +26,7 @@ function Product() {
     };
 
     getProduct();
-  }, [params.id]);
+  }, []);
 
   useEffect(() => {
     try {
@@ -43,17 +43,22 @@ function Product() {
       };
 
       if (product) getRelatedProducts();
-    } catch (err) {
-      console.log(err);
-    }
-  }, [product]);
+    } catch (err) {}
+  }, []);
 
   const dispatch = useDispatch();
 
   const handleClick = () => {
+    const productToStore = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      images: product.images,
+    };
+
     dispatch({
       type: "ADD_ITEM",
-      payload: product,
+      payload: productToStore,
     });
 
     toast.success("Item added to cart!", {
@@ -100,7 +105,7 @@ function Product() {
               <div className="col-xl-6">
                 <p className="display-5 fw-bold">{product.name}</p>
                 <div className="fs-5 mt-2 mb-2">
-                  {product.categoryId === 1 && (
+                  {Number(product.categoryId) === 1 && (
                     <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
@@ -112,7 +117,7 @@ function Product() {
                       <div className="bi-star"></div>
                     </div>
                   )}
-                  {product.categoryId === 2 && (
+                  {Number(product.categoryId) === 2 && (
                     <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
@@ -124,7 +129,7 @@ function Product() {
                       <div className="bi-star"></div>
                     </div>
                   )}
-                  {product.categoryId === 3 && (
+                  {Number(product.categoryId) === 3 && (
                     <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
@@ -136,7 +141,7 @@ function Product() {
                       <div className="bi-star-fill"></div>
                     </div>
                   )}
-                  {product.categoryId === 4 && (
+                  {Number(product.categoryId) === 4 && (
                     <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:

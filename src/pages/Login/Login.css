@@ -26,5 +26,6 @@
 }
 
 .custom-login-image{
-  height: 75vh;
+  object-fit: cover;
+  height: 90vh;
 }

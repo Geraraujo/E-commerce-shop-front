@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "./Navbar.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 function NavbarMenu() {
   const userStore = useSelector((state) => state.user);
   const cartStore = useSelector((state) => state.cart);
+  const [totalQuantity, setTotalQuantity] = useState(0);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -24,6 +25,15 @@ function NavbarMenu() {
 
     navigate("/");
   };
+
+  useEffect(() => {
+    let totalQuantity = 0;
+    cartStore.map((item) => {
+      let quantity = item.quantity;
+      return (totalQuantity = totalQuantity + quantity);
+    });
+    setTotalQuantity(totalQuantity);
+  }, [cartStore]);
   return (
     <>
       <Navbar id="navbar" className="navbar navbar-expand-lg" expand="lg">
@@ -82,7 +92,7 @@ function NavbarMenu() {
           <Link to="/cart">
             <button id="navbar-cart" className="btn btn-navbar" type="submit">
               <ShoppingCartIcon className="cart-icon"></ShoppingCartIcon>
-              <span className="badge ms-1 navbar-badge">{cartStore && cartStore.length}</span>
+              <span className="badge ms-1 navbar-badge">{totalQuantity}</span>
             </button>
           </Link>
 
