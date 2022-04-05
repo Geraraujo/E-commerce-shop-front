@@ -7,6 +7,7 @@ function Cart() {
   const cartStore = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [total, setTotal] = useState(0);
+  const [totalQuantity, setTotalQuantity] = useState(0);
   useEffect(() => {
     let totalPrice = 0;
     cartStore.map((item) => {
@@ -14,6 +15,15 @@ function Cart() {
       return (totalPrice = totalPrice + price);
     });
     setTotal(totalPrice);
+  }, [cartStore]);
+
+  useEffect(() => {
+    let totalQuantity = 0;
+    cartStore.map((item) => {
+      let quantity = item.quantity;
+      return (totalQuantity = totalQuantity + quantity);
+    });
+    setTotalQuantity(totalQuantity);
   }, [cartStore]);
 
   return (
@@ -104,7 +114,7 @@ function Cart() {
                       <hr className="my-4" />
 
                       <div className="d-flex justify-content-between mb-4">
-                        <h6>Items {cartStore && cartStore.length}</h6>
+                        <h6>Items {totalQuantity}</h6>
                       </div>
 
                       <hr className="my-4" />
