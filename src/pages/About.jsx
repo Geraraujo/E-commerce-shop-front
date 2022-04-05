@@ -6,7 +6,7 @@ function About() {
     <>
       <div className=" mb-4 team-cards">
         <h1 className="mb-5">Our Team</h1>
-        <div className="row row-cols-xs-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 justify-content-center">
+        <div className="d-flex flex-row">
           <div className="col">
             <img
               className="img-rounded"
