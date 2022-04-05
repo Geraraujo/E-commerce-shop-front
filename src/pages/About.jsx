@@ -22,10 +22,10 @@ function About() {
             />
             <p className="fs-4 fw-bold mb-0">Germán Araújo</p>
             <p className="fs-6">Full Stack Developer</p>
-            <a href="https://www.linkedin.com/in/german-araujo95/" target="_blank">
+            <a href="https://www.linkedin.com/in/german-araujo95/" target="_blank" rel="noreferrer">
               <i class="fa-brands fa-linkedin icon-size me-3"></i>
             </a>
-            <a href="https://github.com/Geraraujo" target="_blank">
+            <a href="https://github.com/Geraraujo" target="_blank" rel="noreferrer">
               <i class="fa-brands fa-github icon-size"></i>
             </a>
           </div>
@@ -44,10 +44,14 @@ function About() {
             />
             <p className="fs-4 fw-bold mb-0">Stephanie Esquire</p>
             <p className="fs-6">Full Stack Developer</p>
-            <a href="https://www.linkedin.com/in/stephanieesquire/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/stephanieesquire/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <i class="fa-brands fa-linkedin icon-size me-3"></i>
             </a>
-            <a href="https://github.com/stephanieesquire" target="_blank">
+            <a href="https://github.com/stephanieesquire" target="_blank" rel="noreferrer">
               <i class="fa-brands fa-github icon-size"></i>
             </a>
           </div>
@@ -66,10 +70,10 @@ function About() {
             />
             <p className="fs-4 fw-bold mb-0">Hernán Araújo</p>
             <p className="fs-6">Full Stack Developer</p>
-            <a href="https://www.linkedin.com/in/hernan-araujo99/" target="_blank">
+            <a href="https://www.linkedin.com/in/hernan-araujo99/" target="_blank" rel="noreferrer">
               <i class="fa-brands fa-linkedin icon-size me-3"></i>
             </a>
-            <a href="https://github.com/HerAraujo" target="_blank">
+            <a href="https://github.com/HerAraujo" target="_blank" rel="noreferrer">
               <i class="fa-brands fa-github icon-size"></i>
             </a>
           </div>
@@ -93,11 +97,14 @@ function About() {
           <ul className="ul-list">
             <li>
               {" "}
-              <img src="https://img.icons8.com/windows/30/000000/node-js.png" />
+              <img src="https://img.icons8.com/windows/30/000000/node-js.png" alt="Node logo" />
             </li>
             <li>
               {" "}
-              <img src="https://img.icons8.com/external-tal-revivo-light-tal-revivo/24/000000/external-mysql-an-open-source-relational-database-management-system-logo-light-tal-revivo.png" />
+              <img
+                src="https://img.icons8.com/external-tal-revivo-light-tal-revivo/24/000000/external-mysql-an-open-source-relational-database-management-system-logo-light-tal-revivo.png"
+                alt="MySQL logo"
+              />
             </li>
             <li>
               <svg
@@ -116,13 +123,19 @@ function About() {
               </svg>
             </li>
             <li>
-              <img src="https://img.icons8.com/ios-glyphs/30/000000/react.png" />
+              <img src="https://img.icons8.com/ios-glyphs/30/000000/react.png" alt="React logo" />
             </li>
             <li>
-              <img src="https://img.icons8.com/fluency-systems-filled/24/000000/triangle.png" />
+              <img
+                src="https://img.icons8.com/fluency-systems-filled/24/000000/triangle.png"
+                alt="Vercel logo"
+              />
             </li>
             <li>
-              <img src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/32/000000/external-thunder-weather-kmg-design-glyph-kmg-design.png" />
+              <img
+                src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/32/000000/external-thunder-weather-kmg-design-glyph-kmg-design.png"
+                alt="Supabase logo"
+              />
             </li>
           </ul>
 
@@ -138,7 +151,7 @@ function About() {
 
         <p className="about-text">
           In addition to having created the sections within the site, we implemented a{" "}
-          <a href="https://crafters-admin.vercel.app/" target="_blank">
+          <a href="https://crafters-admin.vercel.app/" target="_blank" rel="noreferrer">
             section
           </a>{" "}
           where it is possible to perform administrator actions . <link></link>
