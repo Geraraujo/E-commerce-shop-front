@@ -9,9 +9,16 @@ function Product({ product }) {
   const dispatch = useDispatch();
 
   const handleClick = () => {
+    const productToStore = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      images: product.images,
+    };
+
     dispatch({
       type: "ADD_ITEM",
-      payload: product,
+      payload: productToStore,
     });
 
     toast.success("Item added to cart!", {

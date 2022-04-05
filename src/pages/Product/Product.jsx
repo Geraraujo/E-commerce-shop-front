@@ -26,7 +26,7 @@ function Product() {
     };
 
     getProduct();
-  }, [params.id]);
+  }, []);
 
   useEffect(() => {
     try {
@@ -43,17 +43,22 @@ function Product() {
       };
 
       if (product) getRelatedProducts();
-    } catch (err) {
-      console.log(err);
-    }
-  }, [product]);
+    } catch (err) {}
+  }, []);
 
   const dispatch = useDispatch();
 
   const handleClick = () => {
+    const productToStore = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      images: product.images,
+    };
+
     dispatch({
       type: "ADD_ITEM",
-      payload: product,
+      payload: productToStore,
     });
 
     toast.success("Item added to cart!", {
