@@ -62,7 +62,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/category/:slug" element={<Category />} />
-        <Route path="/product/:id" element={<Product />} />
+        <Route path="/product/:slug" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<PrivateRoute element={<Checkout />} />} />
         <Route path="/about" element={<About />} />

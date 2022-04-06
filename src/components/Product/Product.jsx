@@ -2,7 +2,6 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Product.css";
-import { useEffect } from "react";
 import { toast } from "react-toastify";
 
 function Product({ product }) {
@@ -77,7 +76,7 @@ function Product({ product }) {
   return (
     <>
       {product.images.length > 0 ? (
-        <Link key={product.id} to={`/product/${product.id}`} className="product-link">
+        <Link key={product.id} to={`/product/${product.slug}`} className="product-link">
           <img
             id="related-product-image"
             className="mb-2"
@@ -86,7 +85,7 @@ function Product({ product }) {
           />
         </Link>
       ) : (
-        <Link key={product.id} to={`/product/${product.id}`} className="product-link">
+        <Link key={product.id} to={`/product/${product.slug}`} className="product-link">
           <img
             id="related-product-image"
             className="mb-2"

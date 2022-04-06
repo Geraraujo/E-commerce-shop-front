@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ProductItem from "../../components/Product/Product";
 import "./Product.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,6 +13,7 @@ function Product() {
   const params = useParams();
   const dispatch = useDispatch();
   const store = useSelector((store) => store);
+  const navigate = useNavigate();
 
   const addToCart = () => {
     const productToStore = {
@@ -45,11 +46,12 @@ function Product() {
       try {
         const response = await axios({
           method: "GET",
-          url: `${process.env.REACT_APP_API_URL}/products/${params.id}`,
+          url: `${process.env.REACT_APP_API_URL}/products/${params.slug}`,
         });
+
         setProduct(response.data);
       } catch (err) {
-        console.log(err);
+        err.response.status === 404 && navigate("../*");
       }
     };
 
@@ -72,7 +74,7 @@ function Product() {
 
       if (product) getRelatedProducts();
     } catch (err) {}
-  }, []);
+  }, [product]);
 
   const handleClick = () => {
     if (!store.cart.find((item) => item.id === product.id)) {
@@ -122,7 +124,7 @@ function Product() {
                       <Carousel.Item key={image.name} className="w-100">
                         <div className="d-block w-100">
                           <img
-                            className="slide w-100 img-fluid slide"
+                            className="slide w-100 img-fluid"
                             src={`${process.env.REACT_APP_BUCKET_URL}/${image.name}`}
                             alt={image.title}
                           />
