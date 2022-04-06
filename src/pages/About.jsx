@@ -1,7 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import "./About.css";
+import axios from "axios";
+import Spinner from "react-bootstrap/Spinner";
+import { toast } from "react-toastify";
 
 function About() {
+  const [apiStatus, setApiStatus] = useState();
+  const [reset, setReset] = useState(false);
+
+  const handleClick = async () => {
+    setReset(true);
+
+    try {
+      const response = await axios({
+        method: "POST",
+        url: `${process.env.REACT_APP_API_URL}/resets/all`,
+      });
+      setApiStatus(response.status);
+      setReset(false);
+    } catch (err) {
+      setApiStatus(err.response.status);
+      setReset(false);
+    }
+
+    apiStatus === 200 &&
+      toast.success("Successful reset", {
+        position: "top-right",
+        autoClose: 500,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        toastId: "success",
+      });
+
+    apiStatus > 400 &&
+      toast.error("An error has ocurred", {
+        position: "top-right",
+        autoClose: 500,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+  };
+
   return (
     <>
       <div className=" mb-4 team-cards">
@@ -149,7 +194,7 @@ function About() {
           </ul>
         </div>
 
-        <p className="about-text">
+        <p className="about-text mt-5">
           In addition to having created the sections within the site, we implemented a{" "}
           <a href="https://crafters-admin.vercel.app/" target="_blank" rel="noreferrer">
             section
@@ -157,11 +202,10 @@ function About() {
           where it is possible to perform administrator actions. <link></link>
         </p>
 
-        <p className="fw-bold">Use these credentials to login:</p>
+        <p className="fw-bold mt-3">Use these credentials to login:</p>
 
         <div className="row">
           <div className="col">
-            {" "}
             <h4>Login:</h4>
             <ul className="ul-list">
               <li>E-mail: user@gmail.com</li>
@@ -169,13 +213,31 @@ function About() {
             </ul>
           </div>
           <div className="col">
-            {" "}
             <h4>Admin page:</h4>
             <ul className="ul-list">
-              <li>E-mail: Admin@gmail.com</li>
+              <li>E-mail: admin@gmail.com</li>
               <li>Password: admin</li>
             </ul>
           </div>
+        </div>
+
+        <div>
+          {!reset && (
+            <>
+              <p className="fw-bold mt-2">To reset database:</p>
+              <button type="submit" className="btn btn-reset mb-3" onClick={() => handleClick()}>
+                Reset
+              </button>
+            </>
+          )}
+
+          {reset && (
+            <>
+              <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading</span>
+              </Spinner>
+            </>
+          )}
         </div>
 
         <hr className="mb-0" />
