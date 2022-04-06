@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import ProductItem from "../../components/Product/Product";
 import "./Product.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Carousel } from "react-bootstrap";
 import { toast } from "react-toastify";
 
@@ -11,6 +11,34 @@ function Product() {
   const [product, setProduct] = useState();
   const [relatedProducts, setRelatedProducts] = useState();
   const params = useParams();
+  const dispatch = useDispatch();
+  const store = useSelector((store) => store);
+
+  const addToCart = () => {
+    const productToStore = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      images: product.images,
+      stock: product.stock,
+    };
+
+    dispatch({
+      type: "ADD_ITEM",
+      payload: productToStore,
+    });
+
+    toast.success("Item added to cart!", {
+      position: "top-right",
+      autoClose: 500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      toastId: "success",
+    });
+  };
 
   useEffect(() => {
     const getProduct = async () => {
@@ -46,31 +74,39 @@ function Product() {
     } catch (err) {}
   }, []);
 
-  const dispatch = useDispatch();
-
   const handleClick = () => {
-    const productToStore = {
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      images: product.images,
-    };
+    if (!store.cart.find((item) => item.id === product.id)) {
+      if (product.stock === 0) {
+        toast.error("Out of stock", {
+          position: "top-right",
+          autoClose: 500,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        return;
+      } else {
+        addToCart();
+        return;
+      }
+    }
 
-    dispatch({
-      type: "ADD_ITEM",
-      payload: productToStore,
-    });
-
-    toast.success("Item added to cart!", {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      toastId: "success",
-    });
+    store.cart.find((item) => item.id === product.id) &&
+    store.cart.find((item) => item.id === product.id).stock -
+      store.cart.find((item) => item.id === product.id).quantity >
+      0
+      ? addToCart()
+      : toast.error("Out of stock", {
+          position: "top-right",
+          autoClose: 500,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
   };
 
   return (

@@ -2,12 +2,14 @@ import "./Cart.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 function Cart() {
   const cartStore = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [total, setTotal] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
+
   useEffect(() => {
     let totalPrice = 0;
     cartStore.map((item) => {
@@ -25,6 +27,67 @@ function Cart() {
     });
     setTotalQuantity(totalQuantity);
   }, [cartStore]);
+
+  const addToCart = (product) => {
+    const productToStore = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      images: product.images,
+      stock: product.stock,
+    };
+
+    dispatch({
+      type: "ADD_ITEM",
+      payload: productToStore,
+    });
+
+    toast.success("Item added to cart!", {
+      position: "top-right",
+      autoClose: 500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      toastId: "success",
+    });
+  };
+
+  const handleClick = (product) => {
+    if (!cartStore.find((item) => item.id === product.id)) {
+      if (product.stock === 0) {
+        toast.error("Out of stock", {
+          position: "top-right",
+          autoClose: 500,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        return;
+      } else {
+        addToCart(product);
+        return;
+      }
+    }
+
+    cartStore.find((item) => item.id === product.id) &&
+    cartStore.find((item) => item.id === product.id).stock -
+      cartStore.find((item) => item.id === product.id).quantity >
+      0
+      ? addToCart(product)
+      : toast.error("Out of stock", {
+          position: "top-right",
+          autoClose: 500,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+  };
 
   return (
     <section className="h-custom text-start">
@@ -74,10 +137,7 @@ function Cart() {
                               </span>
 
                               <button className="btn custom-btn-quantity px-2">
-                                <i
-                                  onClick={() => dispatch({ type: "ADD_ITEM", payload: item })}
-                                  className="fas fa-plus"
-                                ></i>
+                                <i onClick={() => handleClick(item)} className="fas fa-plus"></i>
                               </button>
                             </div>
                             <div className="col-md-3 col-lg-3 col-xl-3 offset-lg-1">

@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Product.css";
 import { useEffect } from "react";
@@ -7,13 +7,15 @@ import { toast } from "react-toastify";
 
 function Product({ product }) {
   const dispatch = useDispatch();
+  const store = useSelector((store) => store);
 
-  const handleClick = () => {
+  const addToCart = () => {
     const productToStore = {
       id: product.id,
       name: product.name,
       price: product.price,
       images: product.images,
+      stock: product.stock,
     };
 
     dispatch({
@@ -23,7 +25,7 @@ function Product({ product }) {
 
     toast.success("Item added to cart!", {
       position: "top-right",
-      autoClose: 2000,
+      autoClose: 500,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
@@ -33,9 +35,44 @@ function Product({ product }) {
     });
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  });
+  const handleClick = () => {
+    if (!store.cart.find((item) => item.id === product.id)) {
+      if (product.stock === 0) {
+        toast.error("Out of stock", {
+          position: "top-right",
+          autoClose: 500,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        return;
+      } else {
+        addToCart();
+        return;
+      }
+    }
+
+    store.cart.find((item) => item.id === product.id) &&
+    store.cart.find((item) => item.id === product.id).stock -
+      store.cart.find((item) => item.id === product.id).quantity >
+      0
+      ? addToCart()
+      : toast.error("Out of stock", {
+          position: "top-right",
+          autoClose: 500,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+  };
+
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // });
 
   return (
     <>
