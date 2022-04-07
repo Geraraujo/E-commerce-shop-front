@@ -134,7 +134,7 @@ function Product({ product }) {
               </span>
             </div>
           )}
-          {Number(product.categoryId) === 4 && (
+          {Number(product.categoryId) >= 4 && (
             <div className="d-flex justify-content-start small text-warning mb-2">
               <div className="bi-star-fill"></div>
               <div className="bi-star-fill"></div>

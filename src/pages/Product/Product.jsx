@@ -178,7 +178,7 @@ function Product() {
                       <div className="bi-star-fill"></div>
                     </div>
                   )}
-                  {Number(mainProduct.categoryId) === 4 && (
+                  {Number(mainProduct.categoryId) >= 4 && (
                     <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
