@@ -39,15 +39,32 @@
     transform: rotate(360deg);
   }
 }
-.modalColor{
+.modalColor {
   background-color: #795548;
   border-color: #795548;
- }
- .modalColor:hover{
-   background-color: #6d4c40;
-   border-color: #6d4c40;
- }
- .modalTitle{
-   color: #795548;
-   font-size: xx-large;
- }
+}
+.modalColor:hover {
+  background-color: #6d4c40;
+  border-color: #6d4c40;
+}
+.modalTitle {
+  color: #795548;
+  font-size: xx-large;
+}
+.btn-about {
+  transform: rotate(-90deg);
+  position: fixed;
+  right: 0;
+  bottom: 50%;
+  z-index: 1000;
+  color: #795548;
+  border-radius: 10px 10px 0px 0px;
+  padding: 0.75em 1em 1em;
+  border: #795548;
+  letter-spacing: 1px;
+  box-shadow: rgb(0 0 0 / 50%) 0px 0px 5px 0px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  transform-origin: right bottom;
+}

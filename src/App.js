@@ -18,6 +18,7 @@ import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
+import { Link } from "react-router-dom";
 
 function App() {
   const location = useLocation();
@@ -27,6 +28,10 @@ function App() {
 
   return (
     <div className="App d-flex flex-column h-100">
+      <Link to="/about">
+        <button class="btn-about bg-white ">About this project</button>
+      </Link>
+
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -41,6 +46,7 @@ function App() {
       {location.pathname !== "/login" &&
         location.pathname !== "/register" &&
         location.pathname !== "/reset-password" && <Navbar />}
+
       <>
         <Modal backdrop="static" show={show} onHide={handleClose}>
           <Modal.Header className="d-flex justify-content-center">
