@@ -51,7 +51,7 @@ function About() {
     <>
       <div className=" mb-4 team-cards">
         <h1 className="mb-5">Our Team</h1>
-        <div className="d-flex flex-row">
+        <div className="d-md-flex flex-md-row">
           <div className="col">
             <img
               className="img-rounded"
@@ -132,8 +132,20 @@ function About() {
           This project was performed with the target of fulfilling all the requirements of the final
           project of the Hack Academy 2022 Coding Bootcamp, which consisted of the creation of an
           E-commerce, in a period of time of three weeks.
+          <p>
+            In this project we built the back end to use our own API and database, that are deployed
+            in Supabase and Vercel.
+            <p>
+              We always managed hashed passwords, using the Bcrypt library, and took all security
+              measures to prevent hacking attacks both in the front end and in the back end.
+              <p>
+                The development methodology that we used was Scrum, using Trello to divide the
+                tasks.
+              </p>
+            </p>
+          </p>
         </p>
-        <p>The development methodology that we used was Scrum, using Trello to divide the tasks.</p>
+
         <p>
           We used Bootstrap templates as the basis of the project, and the technologies applied
           were:
@@ -217,6 +229,9 @@ function About() {
             <ul className="ul-list">
               <li>E-mail: admin@gmail.com</li>
               <li>Password: admin</li>
+              <a href="https://crafters-admin.vercel.app/" target="_blank" rel="noreferrer">
+                Go to admin website
+              </a>{" "}
             </ul>
           </div>
         </div>
