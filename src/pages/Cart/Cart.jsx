@@ -111,11 +111,19 @@ function Cart() {
                             className="row mb-4 d-flex justify-content-between align-items-center"
                           >
                             <div className="col-md-2 col-lg-2 col-xl-2">
-                              <img
-                                src={`${process.env.REACT_APP_BUCKET_URL}/${item.images[0].name}`}
-                                className="img-thumbnail"
-                                alt={item.name}
-                              />
+                              {item.images.length > 0 ? (
+                                <img
+                                  src={`${process.env.REACT_APP_BUCKET_URL}/${item.images[0].name}`}
+                                  className="img-thumbnail"
+                                  alt={item.name}
+                                />
+                              ) : (
+                                <img
+                                  src={`${process.env.REACT_APP_BUCKET_URL}/no-photo-available.png`}
+                                  alt={item.name}
+                                  className="img-thumbnail"
+                                />
+                              )}
                             </div>
                             <div className="col-md-3 col-lg-3 col-xl-3">
                               <h6 className="">{item.name}</h6>

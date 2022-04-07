@@ -8,7 +8,7 @@ import { Carousel } from "react-bootstrap";
 import { toast } from "react-toastify";
 
 function Product() {
-  const [product, setProduct] = useState();
+  const [mainProduct, setMainProduct] = useState();
   const [relatedProducts, setRelatedProducts] = useState();
   const params = useParams();
   const dispatch = useDispatch();
@@ -17,11 +17,11 @@ function Product() {
 
   const addToCart = () => {
     const productToStore = {
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      images: product.images,
-      stock: product.stock,
+      id: mainProduct.id,
+      name: mainProduct.name,
+      price: mainProduct.price,
+      images: mainProduct.images,
+      stock: mainProduct.stock,
     };
 
     dispatch({
@@ -49,7 +49,7 @@ function Product() {
           url: `${process.env.REACT_APP_API_URL}/products/${params.slug}`,
         });
 
-        setProduct(response.data);
+        setMainProduct(response.data);
       } catch (err) {
         err.response.status === 404 && navigate("../*");
       }
@@ -58,27 +58,26 @@ function Product() {
     getProduct();
   }, []);
 
-  useEffect(() => {
-    try {
-      const getRelatedProducts = async () => {
-        try {
-          const response = await axios({
-            method: "GET",
-            url: `${process.env.REACT_APP_API_URL}/products/${product.categoryId}/category`,
-          });
-          setRelatedProducts(response.data.filter((product) => product.id !== Number(params.id)));
-        } catch (err) {
-          console.log(err);
-        }
-      };
+  /* TO DO: CHANGE MAIN PRODUCT WHEN CLICK IMAGE PRODUCT COMPONENT*/
+  // useEffect(() => {
+  //   try {
+  //     const getRelatedProducts = async () => {
+  //       try {
+  //         const response = await axios({
+  //           method: "GET",
+  //           url: `${process.env.REACT_APP_API_URL}/products/${mainProduct.categoryId}/category`,
+  //         });
+  //         setRelatedProducts(response.data.filter((product) => product.slug !== mainProduct.slug));
+  //       } catch (err) {}
+  //     };
 
-      if (product) getRelatedProducts();
-    } catch (err) {}
-  }, [product]);
+  //     if (mainProduct) getRelatedProducts();
+  //   } catch (err) {}
+  // }, [mainProduct]);
 
   const handleClick = () => {
-    if (!store.cart.find((item) => item.id === product.id)) {
-      if (product.stock === 0) {
+    if (!store.cart.find((item) => item.id === mainProduct.id)) {
+      if (mainProduct.stock === 0) {
         toast.error("Out of stock", {
           position: "top-right",
           autoClose: 500,
@@ -95,9 +94,9 @@ function Product() {
       }
     }
 
-    store.cart.find((item) => item.id === product.id) &&
-    store.cart.find((item) => item.id === product.id).stock -
-      store.cart.find((item) => item.id === product.id).quantity >
+    store.cart.find((item) => item.id === mainProduct.id) &&
+    store.cart.find((item) => item.id === mainProduct.id).stock -
+      store.cart.find((item) => item.id === mainProduct.id).quantity >
       0
       ? addToCart()
       : toast.error("Out of stock", {
@@ -113,14 +112,14 @@ function Product() {
 
   return (
     <main className="flex-shrink-0 text-start">
-      {product && (
+      {mainProduct && (
         <section id="mainSection" className="py-3">
           <div className="container px-4 px-lg-5 my-5">
             <div className="row gx-4 gx-lg-5 align-items-center">
               <div className="col-xl-6">
                 <Carousel controls={false}>
-                  {product.images.length > 0 ? (
-                    product.images.map((image) => (
+                  {mainProduct.images.length > 0 ? (
+                    mainProduct.images.map((image) => (
                       <Carousel.Item key={image.name} className="w-100">
                         <div className="d-block w-100">
                           <img
@@ -135,15 +134,15 @@ function Product() {
                     <img
                       className="slide w-100 img-fluid slide"
                       src={`${process.env.REACT_APP_BUCKET_URL}/no-photo-available.png`}
-                      alt={product.name}
+                      alt={mainProduct.name}
                     />
                   )}
                 </Carousel>
               </div>
               <div className="col-xl-6">
-                <p className="display-5 fw-bold">{product.name}</p>
+                <p className="display-5 fw-bold">{mainProduct.name}</p>
                 <div className="fs-5 mt-2 mb-2">
-                  {Number(product.categoryId) === 1 && (
+                  {Number(mainProduct.categoryId) === 1 && (
                     <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
@@ -155,7 +154,7 @@ function Product() {
                       <div className="bi-star"></div>
                     </div>
                   )}
-                  {Number(product.categoryId) === 2 && (
+                  {Number(mainProduct.categoryId) === 2 && (
                     <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
@@ -167,7 +166,7 @@ function Product() {
                       <div className="bi-star"></div>
                     </div>
                   )}
-                  {Number(product.categoryId) === 3 && (
+                  {Number(mainProduct.categoryId) === 3 && (
                     <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
@@ -179,7 +178,7 @@ function Product() {
                       <div className="bi-star-fill"></div>
                     </div>
                   )}
-                  {Number(product.categoryId) === 4 && (
+                  {Number(mainProduct.categoryId) === 4 && (
                     <div className="d-flex justify-content-start small text-warning mb-2">
                       <span style={{ color: "#795548" }} className="me-2">
                         Reviews:
@@ -192,12 +191,12 @@ function Product() {
                     </div>
                   )}
 
-                  <span>U$S {product.price}</span>
+                  <span>U$S {mainProduct.price}</span>
                   <span className="text-decoration-line-through ms-4">
-                    U$S {(product.price * 1.25).toFixed(2)}
+                    U$S {(mainProduct.price * 1.25).toFixed(2)}
                   </span>
                 </div>
-                <p className="lead text-start">{product.description}</p>
+                <p className="lead text-start">{mainProduct.description}</p>
                 <div className="d-flex justify-content-start mt-5">
                   <button
                     className="btn btn-product-page flex-shrink-0"
