@@ -130,7 +130,7 @@ function About() {
         <h2 className="fw-bold">About this project</h2>
         <p className="about-text">
           This project was performed with the target of fulfilling all the requirements of the final
-          project of the Hack Academy 2022 Coding Bootcamp, which consisted of the creation of an
+          project of the Hack Academy 2022 Coding Bootcamp, which consisted in the creation of an
           E-commerce, in a period of time of three weeks.
           <p>
             In this project we built the back end to use our own API and database, that are deployed
@@ -139,8 +139,7 @@ function About() {
               We always managed hashed passwords, using the Bcrypt library, and took all security
               measures to prevent hacking attacks both in the front end and in the back end.
               <p>
-                The development methodology that we used was Scrum, using Trello to divide the
-                tasks.
+                The development methodology that we used was Scrum, using Trello to divide tasks.
               </p>
             </p>
           </p>
@@ -209,7 +208,7 @@ function About() {
         <p className="about-text mt-5">
           In addition to having created the sections within the site, we implemented a{" "}
           <a href="https://crafters-admin.vercel.app/" target="_blank" rel="noreferrer">
-            section
+            dashboard
           </a>{" "}
           where it is possible to perform administrator actions. <link></link>
         </p>
