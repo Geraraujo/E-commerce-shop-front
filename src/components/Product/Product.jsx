@@ -97,7 +97,9 @@ function Product({ product }) {
 
       <div className="mt-2 product-text-color">
         <div className="text-start">
-          <h5 className="fw-bolder">{product.name}</h5>
+          <Link key={product.id} to={`/product/${product.slug}`} className="product-link">
+            <h5 className="fw-bolder">{product.name}</h5>
+          </Link>
           {Number(product.categoryId) === 1 && (
             <div className="d-flex justify-content-start small text-warning mb-2">
               <div className="bi-star-fill"></div>
